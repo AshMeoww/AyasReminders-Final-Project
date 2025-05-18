@@ -1,9 +1,4 @@
-"use client"
-
-import React from 'react';
-import Link from 'next/link';
-
-export default function Footer() {
+function Footer() {
   return (
     <div className="bg-amber-950 h-[250px] flex flex-col justify-between items-center py-4 w-full">
       <h1 className="text-2xl font-bold text-white mt-6">Your choices, they matter.</h1>
@@ -15,3 +10,5 @@ export default function Footer() {
    
   );
 }
+
+export default Footer;
