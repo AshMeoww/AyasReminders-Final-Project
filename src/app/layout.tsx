@@ -4,15 +4,26 @@ import "./globals.css";
 import Navbar from "../../components/ui/navbar";
 import Footer from "../../components/ui/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Importing Geist Sans and Geist Mono fonts from Google Fonts
+import { Geologica, Figtree, Pixelify_Sans } from "next/font/google";
+
+// Instantiating the fonts
+const geologica = Geologica({
+  variable: "--font-geologica",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const figtree = Figtree({
+  variable: "--font-figtree",
   subsets: ["latin"],
 });
+
+const pixelifySans = Pixelify_Sans({
+  variable: "--font-pixelify-sans",
+  subsets: ["latin"],
+});
+
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,9 +37,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={` ${geologica.variable} ${figtree.variable} ${pixelifySans.variable} antialiased`}
+      >
         <Navbar />
-        {children}
+        <main>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
