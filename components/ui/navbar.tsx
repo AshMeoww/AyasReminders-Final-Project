@@ -15,7 +15,7 @@ function Navbar() {
   };
 
   return (
-    <div className="flex items-center justify-between px-8 py-4 bg-white shadow-md">
+    <div className="fixed top-0 w-full flex items-center justify-between px-8 py-4 bg-white shadow-md z-50">
       <div className="flex items-center">
         <Image
           src="/images/ayasreminder.png"

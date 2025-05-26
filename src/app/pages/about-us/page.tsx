@@ -7,7 +7,7 @@ import { useState } from "react";
 function AboutUs() {
     return (
         <div className="relative min-h-screen flex flex-col items-center justify-start bg-classroom2 bg-center pb-20">
-            <h1 className="text-6xl font-bold text-yellow-500 font-geologic mt-20">
+            <h1 className="text-6xl font-bold text-[#F9F964] font-geologic mt-20">
                 Meet 22°C
             </h1>
             <p className="text-white mt-8 font-figtree font-bold text-4xl w-4xl text-center px-4">
