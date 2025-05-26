@@ -32,7 +32,7 @@ body {
 }
 
 .bg-cloud {
-  background-image: url('/images/cloud-bg.png');
+  background-image: url('/images/cloud.png');
   background-size: cover;
   background-position: center;
 }
@@ -80,6 +80,14 @@ body {
   background-attachment: local; /* or scroll */
   min-height: 100%;
   background-size: 100% auto;
+}
+
+.bg-ayabike {
+  background-image: url('/images/ayabike.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: local; /* or scroll */
+  min-height: 100%;
 }
 
 .font-pixelify {

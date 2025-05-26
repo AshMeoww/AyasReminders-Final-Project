@@ -19,14 +19,16 @@ function AyaDropdown() {
           >
             {/* Display text */}
             {isOpen ? (
-                                <>
-                                    Meet&nbsp;<span className="font-pixelify text-[#1AB261]">Aya</span>
-                                </>
-                            ) : (
-                                <>
-                                    Meet&nbsp;<span className="font-pixelify text-[#1AB261]">Aya</span>
-                                </>
-                            )}
+              <>
+                Meet&nbsp;
+                <span className="font-pixelify text-[#1AB261]">Aya</span>
+              </>
+            ) : (
+              <>
+                Meet&nbsp;
+                <span className="font-pixelify text-[#1AB261]">Aya</span>
+              </>
+            )}
             <span
               className={`ml-2 transform transition-transform ${
                 isOpen ? "rotate-180" : "rotate-0"
@@ -50,14 +52,15 @@ function AyaDropdown() {
               mute, Aya learned early on that communication doesn’t always come
               in words. Her mother leaves her sticky notes every morning—gentle
               reminders, thoughtful advice, or simple encouragements—that help
-              Aya get through each day. <br /><br /> Though shy and reserved, Aya has a
-              curious heart. She notices the little things: how water runs too
-              long, how lights stay on in empty rooms, how waste piles up when
-              no one’s looking. Through small choices and quiet reflections, she
-              begins to understand how caring for the world is deeply connected
-              to caring for others—and for herself. Her story is one of gentle
-              change, subtle realizations, and the quiet kind of love that
-              lingers, even in silence.
+              Aya get through each day. <br />
+              <br /> Though shy and reserved, Aya has a curious heart. She
+              notices the little things: how water runs too long, how lights
+              stay on in empty rooms, how waste piles up when no one’s looking.
+              Through small choices and quiet reflections, she begins to
+              understand how caring for the world is deeply connected to caring
+              for others—and for herself. Her story is one of gentle change,
+              subtle realizations, and the quiet kind of love that lingers, even
+              in silence.
             </div>
           )}
         </div>

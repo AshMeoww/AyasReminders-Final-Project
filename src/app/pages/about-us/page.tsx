@@ -6,11 +6,11 @@ import { useState } from "react";
 
 function AboutUs() {
     return (
-        <div className="relative min-h-screen flex flex-col items-center justify-start bg-classroom2 bg-center pb-20">
-            <h1 className="text-6xl font-bold text-[#F9F964] font-geologic mt-20">
+        <div className="relative min-h-screen flex flex-col items-center justify-start bg-classroom bg-center pb-20">
+            <h1 className="text-6xl font-bold text-[#F9F964] font-geologic mt-40 drop-shadow-[0_2px_3px_rgba(0,0,0,0.8)]">
                 Meet 22°C
             </h1>
-            <p className="text-white mt-8 font-figtree font-bold text-4xl w-4xl text-center px-4">
+            <p className="text-white mt-8 mb-30 font-figtree font-semibold text-3xl w-4xl text-center px-4 drop-shadow-[0_2px_3px_rgba(0,0,0,0.8)]">
                 Hailing from Cavite State University - Main Campus, 22°C is a team of
                 four behind the creation of “aya’s reminders”.
             </p>
