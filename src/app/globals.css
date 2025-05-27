@@ -1,6 +1,10 @@
 @import "tailwindcss";
+/* imported geologica */
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+/* imported figtree */
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+/* imported pixelify sans */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap'); 
 
 :root {
   --background: #ffffff;
@@ -24,13 +28,72 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, sans-serif, Geologica, Figtree;
+  font-family: Arial, sans-serif, Geologica, Figtree, Pixelify Sans;
 }
 
 .bg-cloud {
-  background-image: url('/images/cloud-bg.png');
+  background-image: url('/images/cloud.png');
   background-size: cover;
   background-position: center;
 }
 
+.bg-classroom {
+  background-image: url('/images/classroom.png');
+  background-size: cover;
+  background-position: center;
+}
 
+/* .bg-classroom2 {
+  background-image: url('/images/classroom2.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  objectFit: "contain";
+} */
+
+.bg-classroom2 {
+  background-image: url('/images/classroom2.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain; /* OR '100% auto' */
+  background-attachment: local; /* or scroll */
+  min-height: 100%;
+  background-size: 100% auto;
+
+}
+
+.bg-forest {
+  background-image: url('/images/forest-bg.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-road {
+  background-image: url('/images/road_bg.png');
+  background-position: center;
+}
+
+.bg-cloudHeader {
+  background-image: url('/images/cloud_header.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain; /* OR '100% auto' */
+  background-attachment: local; /* or scroll */
+  min-height: 100%;
+  background-size: 100% auto;
+}
+
+.bg-ayabike {
+  background-image: url('/images/ayabike.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: local; /* or scroll */
+  min-height: 100%;
+}
+
+.font-pixelify {
+  font-family: 'Pixelify Sans', Arial, sans-serif;
+}
+
+.font-geologica {
+  font-family: 'Geologica', Arial, sans-serif;
+}
