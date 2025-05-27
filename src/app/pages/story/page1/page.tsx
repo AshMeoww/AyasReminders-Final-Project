@@ -8,9 +8,10 @@ export default function Page1() {
   return (
     <div>
       <StoryPart
-         imageSrc="/bike.jpg"
-         imageAlt="Dark cave entrance"
-         text="You find a dark cave. It's cold, and something seems to be watching you. Do you enter or turn back?"
+         background="/images/aya.png"
+         character="/images/Aids.png"
+         name = "Aya"
+         text="Hello, this is a test message."
        />
     </div>
   );
