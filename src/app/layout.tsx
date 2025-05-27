@@ -5,6 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "../../components/ui/navbar";
 import Footer from "../../components/ui/footer";
 import "./globals.css";
+import { Metadata } from "next";
 
 // Importing Geist Sans and Geist Mono fonts from Google Fonts
 import { Geologica, Figtree, Pixelify_Sans } from "next/font/google";
@@ -42,15 +43,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body
-        className={` ${geologica.variable} ${figtree.variable} ${pixelifySans.variable} antialiased`}
-      >
-        <Navbar />
-        <main>
-          {children}
-        </main>
-        <Footer />
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geologica.variable} ${figtree.variable} ${pixelifySans.variable} antialiased`}>
         {!isStoryPage && <Navbar />}
         {children}
         {!isStoryPage && <Footer />}
