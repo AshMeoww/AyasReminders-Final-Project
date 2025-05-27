@@ -70,7 +70,7 @@ function Navbar() {
       </div>
 
       <button 
-        onClick={() => handleNavigation("/pages/get-started")}
+        onClick={() => handleNavigation("/pages/story/home")}
         className="px-6 py-2 text-white bg-green-500 rounded-4xl hover:bg-green-600 mr-4"
       >
         Get Started

@@ -1,8 +1,11 @@
-import type { Metadata } from "next";
+"use client";
+
+import { usePathname } from "next/navigation";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import Navbar from "../../components/ui/navbar";
 import Footer from "../../components/ui/footer";
+import "./globals.css";
+import { Metadata } from "next";
 
 // Importing Geist Sans and Geist Mono fonts from Google Fonts
 import { Geologica, Figtree, Pixelify_Sans } from "next/font/google";
@@ -32,19 +35,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  const pathname = usePathname();
+  const isStoryPage = pathname.startsWith("/pages/story");
+
   return (
     <html lang="en">
-      <body
-        className={` ${geologica.variable} ${figtree.variable} ${pixelifySans.variable} antialiased`}
-      >
-        <Navbar />
-        <main>
-          {children}
-        </main>
-        <Footer />
+      <body className={`${geologica.variable} ${figtree.variable} ${pixelifySans.variable} antialiased`}>
+        {!isStoryPage && <Navbar />}
+        {children}
+        {!isStoryPage && <Footer />}
       </body>
     </html>
   );
