@@ -25,7 +25,7 @@ function AboutGame() {
     );
 }
 
-import SproutieDropdown from "./Sproutie /page";
+import SproutieDropdown from "./Sproutie/page";
 import AyaDropdown from "./Aya/page";
 import Objectives from "./Objectives/page";
 
