@@ -1,6 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 
 function Objectives() {
+    const objectives = [
+        { id: "reduce-waste", src: "/images/sproutie_waste.png", alt: "Objective 1" },
+        { id: "reduce-carbon", src: "/images/sproutie_carbon.png", alt: "Objective 2" },
+        { id: "save-water-resources", src: "/images/sproutie_water.png", alt: "Objective 3" },
+    ];
+
     return (
         <div className="flex flex-col gap-12 p-8 bg-white">
             {/* Green Container with Header */}
@@ -12,27 +19,21 @@ function Objectives() {
 
             {/* Images Section */}
             <div className="flex flex-wrap justify-center gap-6 mt-6">
-                <Link href="/about-the-game/objectives/waste">
-                    <img
-                        src="/images/sproutie_waste.png"
-                        alt="Objective 1"
-                        className="w-64 h-64 rounded-lg transform transition-transform duration-300 hover:scale-110 cursor-pointer"
-                    />
-                </Link>
-                <Link href="/about-the-game/objectives/carbon">
-                    <img
-                        src="/images/sproutie_carbon.png"
-                        alt="Objective 2"
-                        className="w-64 h-64 rounded-lg transform transition-transform duration-300 hover:scale-110 cursor-pointer"
-                    />
-                </Link>
-                <Link href="/about-the-game/objectives/water">
-                    <img
-                        src="/images/sproutie_water.png"
-                        alt="Objective 3"
-                        className="w-64 h-64 rounded-lg transform transition-transform duration-300 hover:scale-110 cursor-pointer"
-                    />
-                </Link>
+                {objectives.map((objective) => (
+                    <Link
+                        key={objective.id}
+                        href={`pages/about-the-game/Objectives#${objective.id}`}
+                        scroll={false} // Prevents automatic scrolling
+                        className="rounded-lg transform transition-transform duration-300 hover:scale-110 cursor-pointer"
+                    >
+                        <Image
+                            src={objective.src}
+                            alt={objective.alt}
+                            width={256}
+                            height={256}
+                        />
+                    </Link>
+                ))}
             </div>
         </div>
     );
