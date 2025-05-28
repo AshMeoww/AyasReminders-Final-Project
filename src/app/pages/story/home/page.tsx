@@ -26,7 +26,7 @@ export default function GameHome() {
           />
           </Link>
           <Link
-            href="/pages/story/setting"
+            href="/story/setting"
             className="text-xl sm:text-xl text-gray-700 font-medium font-schoolbell relative group flex items-center"
           >Setting
           <span

@@ -14,6 +14,7 @@ type Dialogue = {
     text: string;
     nextIndex: number;
   }[];
+  nextIndex?: number;
 };
 
 type StoryPartProps = {
@@ -24,18 +25,17 @@ type StoryPartProps = {
 export default function StoryPart({ background, dialogues }: StoryPartProps) {
   const { playSfx1, playSfx2 } = useVolume();
   const router = useRouter();
-
+  const [jumpToIndex, setJumpToIndex] = useState<number | null>(null);
   const [dialogueIndex, setDialogueIndex] = useState(0);
   const [displayedLength, setDisplayedLength] = useState(0);
   const cancelTypingRef = useRef(false);
 
   const currentDialogue = dialogues[dialogueIndex];
 
-  // Typing effect: reveal text letter by letter
+  // Typing effect
   useEffect(() => {
     cancelTypingRef.current = false;
     setDisplayedLength(0);
-
     const type = async () => {
       for (let i = 1; i <= currentDialogue.text.length; i++) {
         if (cancelTypingRef.current) {
@@ -54,27 +54,30 @@ export default function StoryPart({ background, dialogues }: StoryPartProps) {
     };
   }, [currentDialogue]);
 
-  // Handle clicking dialogue box
+
+  
   const handleClick = () => {
     if (displayedLength < currentDialogue.text.length) {
-      // Skip typing animation
       cancelTypingRef.current = true;
     } else if (currentDialogue.choices && currentDialogue.choices.length > 0) {
-      // If choices exist, do nothing on dialogue click to avoid skipping
+      // Wait for choice
       return;
-    } else if (dialogueIndex < dialogues.length - 1) {
-      setDialogueIndex((prev) => prev + 1);
+    } else if (currentDialogue.nextIndex !== undefined) {
+      setDialogueIndex(currentDialogue.nextIndex);
     } else {
       console.log("End of dialogue");
     }
   };
+  
+  
+const handleChoiceClick = (nextIndex: number) => {
+  playSfx1();
+  setDialogueIndex(nextIndex);
+};
 
-  // Handle choice selection
-  const handleChoiceClick = (nextIndex: number) => {
-    playSfx1();
-    setDialogueIndex(nextIndex);
-  };
-
+  
+  
+  
   return (
     <div
       className="min-h-screen bg-white flex flex-col items-center justify-center relative p-8"
@@ -82,7 +85,7 @@ export default function StoryPart({ background, dialogues }: StoryPartProps) {
     >
       {/* Settings Icon */}
       <div
-        className="absolute top-4 right-4 cursor-pointer"
+        className="absolute top-4 right-40 cursor-pointer z-10"
         onClick={(e) => {
           e.stopPropagation();
           playSfx1();
@@ -96,13 +99,15 @@ export default function StoryPart({ background, dialogues }: StoryPartProps) {
       </div>
 
       {/* Background Image */}
-      <Image
-        src={background}
-        alt="Background"
-        width={1000}
-        height={300}
-        className="object-contain"
-      />
+      <div className="fixed top-0 h-screen w-[80vw] overflow-hidden ">
+        <Image
+          src={background}
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
 
       {/* Dialogue Box */}
       <div className="fixed bottom-13 left-0 right-0 w-full max-w-3xl h-40 bg-white border-4 border-black p-4 mx-auto">
@@ -132,7 +137,7 @@ export default function StoryPart({ background, dialogues }: StoryPartProps) {
         style={{
           opacity: displayedLength === currentDialogue.text.length ? 1 : 0,
           pointerEvents: displayedLength === currentDialogue.text.length ? "auto" : "none",
-          transition: "opacity 0.3s ease", // optional fade effect
+          transition: "opacity 0.3s ease",
         }}
         >
           {currentDialogue.choices.map((choice, index) => (
@@ -143,6 +148,7 @@ export default function StoryPart({ background, dialogues }: StoryPartProps) {
                 e.stopPropagation();
                 handleChoiceClick(choice.nextIndex);
               }}
+              onMouseEnter={() => playSfx2()}
               disabled={displayedLength !== currentDialogue.text.length}
             >
               {choice.text}
@@ -150,10 +156,7 @@ export default function StoryPart({ background, dialogues }: StoryPartProps) {
           ))}
         </div>
       )}
-      </div>
-
-      {/* Choices: shown after typing finishes */}
-      
+      </div>    
     </div>
   );
 }
