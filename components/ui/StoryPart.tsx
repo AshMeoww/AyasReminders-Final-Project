@@ -7,8 +7,8 @@ import { Settings } from "lucide-react";
 import { useVolume } from "@/components/context/VolumeContext";
 
 type Dialogue = {
-  character: string;
-  name: string;
+  character?: string;
+  name?: string;
   text: string;
   choices?: {
     text: string;
@@ -23,7 +23,7 @@ type StoryPartProps = {
 };
 
 export default function StoryPart({ background, dialogues }: StoryPartProps) {
-  const { playSfx1, playSfx2 } = useVolume();
+  const { playSfx1, playSfx2, playTypingSfx, stopTypingSfx } = useVolume();
   const router = useRouter();
   const [jumpToIndex, setJumpToIndex] = useState<number | null>(null);
   const [dialogueIndex, setDialogueIndex] = useState(0);
@@ -36,6 +36,7 @@ export default function StoryPart({ background, dialogues }: StoryPartProps) {
   useEffect(() => {
     cancelTypingRef.current = false;
     setDisplayedLength(0);
+    playTypingSfx();
     const type = async () => {
       for (let i = 1; i <= currentDialogue.text.length; i++) {
         if (cancelTypingRef.current) {
@@ -43,14 +44,16 @@ export default function StoryPart({ background, dialogues }: StoryPartProps) {
           return;
         }
         setDisplayedLength(i);
-        await new Promise((r) => setTimeout(r, 30));
+        await new Promise((r) => setTimeout(r, 25));
       }
+      stopTypingSfx();
     };
 
     type();
 
     return () => {
       cancelTypingRef.current = true;
+      stopTypingSfx();
     };
   }, [currentDialogue]);
 
@@ -112,20 +115,24 @@ const handleChoiceClick = (nextIndex: number) => {
       {/* Dialogue Box */}
       <div className="fixed bottom-13 left-0 right-0 w-full max-w-3xl h-40 bg-white border-4 border-black p-4 mx-auto">
         {/* Name Box */}
-        <div className="text-gray-900 absolute -top-15 left-44 bg-white border-4 border-black w-30 h-10 text-sm font-bold flex items-center justify-center">
-          {currentDialogue.name}
-        </div>
+        {currentDialogue.name && (
+          <div className="text-gray-900 absolute -top-15 left-44 bg-white border-4 border-black w-30 h-10 text-sm font-bold flex items-center justify-center">
+            {currentDialogue.name}
+          </div>
+        )}
 
         {/* Character Image */}
-        <div className="absolute -top-42 left-0 bg-white border-4 border-black w-40 h-37 flex items-center justify-center">
-          <Image
-            src={currentDialogue.character}
-            alt="Character"
-            width={150}
-            height={150}
-            className="object-contain"
-          />
-        </div>
+        {currentDialogue.character && (
+          <div className="absolute -top-42 left-0 bg-white border-4 border-black w-40 h-37 flex items-center justify-center">
+            <Image
+              src={currentDialogue.character}
+              alt="Character"
+              width={150}
+              height={150}
+              className="object-contain"
+            />
+          </div>
+        )}
 
         {/* Dialogue Text */}
         <p className="text-gray-900 text-lg leading-relaxed overflow-auto font-schoolbell">

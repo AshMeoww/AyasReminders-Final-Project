@@ -23,6 +23,8 @@ type VolumeContextType = {
   playSfx2: () => void;
   playMusic: () => void;
   stopMusic: () => void;
+  playTypingSfx: () => void;
+  stopTypingSfx: () => void;   
 };
 
 const VolumeContext = createContext<VolumeContextType | undefined>(undefined);
@@ -43,6 +45,7 @@ export function VolumeProvider({ children }: { children: ReactNode }) {
   const musicRef = useRef<HTMLAudioElement>(null);
   const sfxRef1 = useRef<HTMLAudioElement>(null);
   const sfxRef2 = useRef<HTMLAudioElement>(null);
+  const typingRef = useRef<HTMLAudioElement>(null); 
   const pathname = usePathname();
 
   // Auto play or pause music based on route
@@ -89,6 +92,23 @@ export function VolumeProvider({ children }: { children: ReactNode }) {
     }
   }
 
+  function playTypingSfx() {
+    if (typingRef.current) {
+      typingRef.current.volume = masterVolume * sfxVolume;
+      typingRef.current.loop = true;
+      typingRef.current.currentTime = 0;
+      typingRef.current.play().catch(() => {});
+    }
+  }
+  
+  function stopTypingSfx() {
+    if (typingRef.current) {
+      typingRef.current.pause();
+      typingRef.current.currentTime = 0;
+    }
+  }
+  
+
   return (
     <VolumeContext.Provider
       value={{
@@ -101,13 +121,16 @@ export function VolumeProvider({ children }: { children: ReactNode }) {
         playMusic,
         playSfx1, 
         playSfx2,
-        stopMusic
+        stopMusic,
+        playTypingSfx,  
+        stopTypingSfx,   
       }}
     >
       {/* Global audio players, hidden */}
       <audio ref={musicRef} src="/music/bg.mp3" loop />
       <audio ref={sfxRef1} src="/sfx/sfx1.mp3" />
       <audio ref={sfxRef2} src="/sfx/sfx2.mp3" />
+      <audio ref={typingRef} src="/sfx/typing.mp3" />
 
 
       {children}
