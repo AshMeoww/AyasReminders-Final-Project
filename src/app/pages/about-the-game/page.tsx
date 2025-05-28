@@ -21,6 +21,9 @@ function AboutGame() {
             <div>
                 <Objectives />
             </div>
+            <div>
+                <MeetCast />
+            </div>
         </div>
     );
 }
@@ -28,5 +31,6 @@ function AboutGame() {
 import SproutieDropdown from "./Sproutie/page";
 import AyaDropdown from "./Aya/page";
 import Objectives from "./Objectives/page";
+import MeetCast from "./MeetCast/page";
 
 export default AboutGame;

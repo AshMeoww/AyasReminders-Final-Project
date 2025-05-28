@@ -75,9 +75,8 @@ body {
 }
 
 .bg-forest {
-  background-image: url('/images/forest-bg.png');
-  background-size: cover;
-  background-position: center;
+  background-image: url('/images/forest.png');
+  background-position: center; /* Added background-position */
 }
 
 .bg-road {
