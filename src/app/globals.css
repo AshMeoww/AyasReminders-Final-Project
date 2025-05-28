@@ -1,21 +1,16 @@
 @import "tailwindcss";
-/* imported geologica */
-@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
-/* imported figtree */
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
-/* imported pixelify sans */
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap'); 
 
+/* === Google Fonts === */
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+
+
+/* === CSS Variables === */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,12 +20,39 @@
   }
 }
 
+/* === Tailwind Theme Extension (Inline) === */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* === Base Styles === */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, sans-serif, Geologica, Figtree, Pixelify Sans;
+  font-family: Arial, sans-serif, Geologica, Figtree, Pixelify Sans, Schoolbell;
 }
 
+/* === Font Utility Classes === */
+.font-pixelify {
+  font-family: 'Pixelify Sans', Arial, sans-serif;
+}
+
+.font-geologica {
+  font-family: 'Geologica', Arial, sans-serif;
+}
+
+.font-figtree {
+  font-family: 'Figtree', Arial, sans-serif;
+}
+
+.font-schoolbell {
+  font-family: 'Schoolbell', cursive, Arial, sans-serif;  /* <-- added */
+}
+
+/* === Background Utility Classes === */
 .bg-cloud {
   background-image: url('/images/cloud.png');
   background-size: cover;
@@ -43,22 +65,13 @@ body {
   background-position: center;
 }
 
-/* .bg-classroom2 {
-  background-image: url('/images/classroom2.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  objectFit: "contain";
-} */
-
 .bg-classroom2 {
   background-image: url('/images/classroom2.png');
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: contain; /* OR '100% auto' */
-  background-attachment: local; /* or scroll */
-  min-height: 100%;
   background-size: 100% auto;
-
+  background-attachment: local;
+  min-height: 100%;
 }
 
 .bg-forest {
@@ -75,28 +88,78 @@ body {
   background-image: url('/images/cloud_header.png');
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: contain; /* OR '100% auto' */
-  background-attachment: local; /* or scroll */
-  min-height: 100%;
   background-size: 100% auto;
+  background-attachment: local;
+  min-height: 100%;
 }
 
 .bg-ayabike {
   background-image: url('/images/ayabike.png');
   background-repeat: no-repeat;
   background-size: contain;
-  background-attachment: local; /* or scroll */
+  background-attachment: local;
   min-height: 100%;
 }
 
-.font-pixelify {
-  font-family: 'Pixelify Sans', Arial, sans-serif;
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    
+  }
 }
 
-.font-geologica {
-  font-family: 'Geologica', Arial, sans-serif;
+.fade-in-triangle {
+  animation: fadeIn 0.3s ease forwards;
 }
 
-.font-figtree {
-  font-family: 'Figtree', Arial, sans-serif;
+
+input[type="range"] {
+  -webkit-appearance: none;
+
+  height: 4px;
+  background: #ccc; /* light gray line */
+  outline: none;
+  margin-top: 8px;
 }
+
+/* Track */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  background: #2E2E2E; /* black line */
+}
+
+input[type="range"]::-moz-range-track {
+  height: 4px;
+  background: #2E2E2E;
+}
+
+/* Square Thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #2E2E2E; /* black square */
+  cursor: pointer;
+  margin-top: -6px; /* center thumb vertically */
+  border-radius: 0; /* square shape */
+  border: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #2E2E2E;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+}
+
+
