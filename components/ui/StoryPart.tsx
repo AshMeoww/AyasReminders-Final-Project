@@ -6,99 +6,154 @@ import Image from "next/image";
 import { Settings } from "lucide-react";
 import { useVolume } from "@/components/context/VolumeContext";
 
-type StoryPartProps = {
-  background: string;
+type Dialogue = {
   character: string;
   name: string;
   text: string;
+  choices?: {
+    text: string;
+    nextIndex: number;
+  }[];
 };
 
+type StoryPartProps = {
+  background: string;
+  dialogues: Dialogue[];
+};
 
-
-export default function StoryPart({ background, character, name, text }: StoryPartProps) {
-  const { masterVolume, musicVolume, playSfx1, playSfx2, } = useVolume();
+export default function StoryPart({ background, dialogues }: StoryPartProps) {
+  const { playSfx1, playSfx2 } = useVolume();
   const router = useRouter();
-  const [displayedText, setDisplayedText] = useState("");
 
+  const [dialogueIndex, setDialogueIndex] = useState(0);
+  const [displayedLength, setDisplayedLength] = useState(0);
+  const cancelTypingRef = useRef(false);
+
+  const currentDialogue = dialogues[dialogueIndex];
+
+  // Typing effect: reveal text letter by letter
   useEffect(() => {
-    let isCancelled = false;
+    cancelTypingRef.current = false;
+    setDisplayedLength(0);
 
-    const typeText = async () => {
-      setDisplayedText(""); // reset before typing
-      if (!text || typeof text !== "string") return;
-
-      for (let i = 0; i < text.length; i++) {
-        if (isCancelled) break;
-        await new Promise((resolve) => setTimeout(resolve, 30));
-        setDisplayedText((prev) => prev + text[i]);
+    const type = async () => {
+      for (let i = 1; i <= currentDialogue.text.length; i++) {
+        if (cancelTypingRef.current) {
+          setDisplayedLength(currentDialogue.text.length);
+          return;
+        }
+        setDisplayedLength(i);
+        await new Promise((r) => setTimeout(r, 30));
       }
     };
 
-    typeText();
+    type();
 
     return () => {
-      isCancelled = true;
+      cancelTypingRef.current = true;
     };
-  }, [text]);
-  
-  
-  
-  
+  }, [currentDialogue]);
 
+  // Handle clicking dialogue box
+  const handleClick = () => {
+    if (displayedLength < currentDialogue.text.length) {
+      // Skip typing animation
+      cancelTypingRef.current = true;
+    } else if (currentDialogue.choices && currentDialogue.choices.length > 0) {
+      // If choices exist, do nothing on dialogue click to avoid skipping
+      return;
+    } else if (dialogueIndex < dialogues.length - 1) {
+      setDialogueIndex((prev) => prev + 1);
+    } else {
+      console.log("End of dialogue");
+    }
+  };
+
+  // Handle choice selection
+  const handleChoiceClick = (nextIndex: number) => {
+    playSfx1();
+    setDialogueIndex(nextIndex);
+  };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center relative p-8">
-      
-
+    <div
+      className="min-h-screen bg-white flex flex-col items-center justify-center relative p-8"
+      onClick={handleClick}
+    >
       {/* Settings Icon */}
       <div
         className="absolute top-4 right-4 cursor-pointer"
-        onClick={() => {
-          playSfx1()
-          router.push("/pages/story/setting")
+        onClick={(e) => {
+          e.stopPropagation();
+          playSfx1();
+          router.push("/pages/story/setting");
         }}
         onMouseEnter={() => {
-          playSfx2()
+          playSfx2();
         }}
       >
         <Settings className="w-6 h-6 text-gray-600 hover:text-black" />
       </div>
 
-      {/* Story Image */}
+      {/* Background Image */}
       <Image
         src={background}
         alt="Background"
-        width={300}
+        width={1000}
         height={300}
         className="object-contain"
       />
 
- 
-      {/* Dialogue box */}
-      <div className="fixed bottom-13 left-0 right-0 w-full max-w-2xl h-40 bg-white border-3 border-black p-4 mx-auto">
-  {/* Name box */}
-  <div className=" text-gray-900 absolute -top-14 left-45 bg-white border-3 border-black  px-3 py-1 text-sm font-bold">
-  {name}
-  </div>
+      {/* Dialogue Box */}
+      <div className="fixed bottom-13 left-0 right-0 w-full max-w-3xl h-40 bg-white border-4 border-black p-4 mx-auto">
+        {/* Name Box */}
+        <div className="text-gray-900 absolute -top-15 left-44 bg-white border-4 border-black w-30 h-10 text-sm font-bold flex items-center justify-center">
+          {currentDialogue.name}
+        </div>
 
-  {/* Image container */}
-<div className="absolute -top-42  left-0 bg-white border-3 border-black w-40 h-37 flex items-center justify-center ">
-  <Image
-    src={character}
-    alt="Character"
-    width={150}
-    height={150}
-    className="object-contain"
-  />
-</div>
+        {/* Character Image */}
+        <div className="absolute -top-42 left-0 bg-white border-4 border-black w-40 h-37 flex items-center justify-center">
+          <Image
+            src={currentDialogue.character}
+            alt="Character"
+            width={150}
+            height={150}
+            className="object-contain"
+          />
+        </div>
 
+        {/* Dialogue Text */}
+        <p className="text-gray-900 text-lg leading-relaxed overflow-auto font-schoolbell">
+          {currentDialogue.text.slice(0, displayedLength)}
+        </p>
+        {currentDialogue.choices && currentDialogue.choices.length > 0 && (
+        <div
+        className="absolute flex flex-col space-y-5  -top-37 right-0 "
+        style={{
+          opacity: displayedLength === currentDialogue.text.length ? 1 : 0,
+          pointerEvents: displayedLength === currentDialogue.text.length ? "auto" : "none",
+          transition: "opacity 0.3s ease", // optional fade effect
+        }}
+        >
+          {currentDialogue.choices.map((choice, index) => (
+            <button
+              key={index}
+              className="bg-white text-black py-3 px-5  hover:bg-gray-600 border-4 border-black w-[14vw] max-w-sm text-left"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleChoiceClick(choice.nextIndex);
+              }}
+              disabled={displayedLength !== currentDialogue.text.length}
+            >
+              {choice.text}
+            </button>
+          ))}
+        </div>
+      )}
+      </div>
 
-  {/* Dialogue text */}
-  <p className="text-gray-900 text-lg leading-relaxed overflow-auto font-schoolbell">
-    {displayedText}
-  </p>
-</div>
-
+      {/* Choices: shown after typing finishes */}
+      
     </div>
   );
 }
