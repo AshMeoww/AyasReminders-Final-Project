@@ -6,7 +6,7 @@ import Navbar from "../../components/ui/navbar";
 import Footer from "../../components/ui/footer";
 import LandingPage from "./pages/home/page";
 import LandingPage2 from "./pages/about-the-game/Objectives/page";
-import EcoCard from "./pages/ecocard/page";
+import EcoCard from "./pages/get-started/Ecocard/page";
 
 
 export default function App() {
