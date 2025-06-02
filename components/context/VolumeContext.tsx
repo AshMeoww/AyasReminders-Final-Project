@@ -1,5 +1,3 @@
-'use client';
-
 "use client";
 
 import React, {
@@ -81,12 +79,14 @@ export function VolumeProvider({ children }: { children: ReactNode }) {
 
   function playSfx1() {
     if (sfxRef1.current) {
+      sfxRef1.current.volume = masterVolume * sfxVolume
       sfxRef1.current.currentTime = 0;
       sfxRef1.current.play();
     }
   }
   function playSfx2() {
     if (sfxRef2.current) {
+      sfxRef2.current.volume = masterVolume * sfxVolume
       sfxRef2.current.currentTime = 0;
       sfxRef2.current.play();
     }

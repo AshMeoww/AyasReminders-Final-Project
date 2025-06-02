@@ -6,7 +6,7 @@ import Navbar from "../../components/ui/navbar";
 import Footer from "../../components/ui/footer";
 import "./globals.css";
 import { VolumeProvider } from "../../components/context/VolumeContext";
-
+import { EcoProvider } from "../../components/context/ecoPointContext";
 
 // Instantiate custom fonts
 const geologica = Geologica({
@@ -43,9 +43,11 @@ export default function RootLayout({
         `}
       >
         <VolumeProvider>
+        <EcoProvider>
         {!isStoryPage && <Navbar />}
         {children}    
         {!isStoryPage && <Footer />}
+        </EcoProvider>
         </VolumeProvider>
       </body>
     </html>

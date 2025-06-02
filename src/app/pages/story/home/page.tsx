@@ -1,10 +1,22 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function GameHome() {
   return (
     <div className="min-h-screen bg-white relative flex flex-col items-center justify-center px-6 py-8 sm:px-12">
+
+<div className="absolute top-0 right-0 h-[90vh] w-auto overflow-hidden z-0">
+        <Image
+          src="/images/aya.png" // ✅ Replace with your image path
+          alt="Aya Character"
+          width={800} 
+          height={100} 
+          className="object-cover h-full"
+        />
+      </div>
+
       <div className="absolute top-9 left-4 sm:top-41 sm:left-50 flex flex-col items-start">
         <h1 className="text-xl sm:text-6xl font-bold select-none font-pixelify">
           <span className="text-green-700 leading-tight block">aya's</span>
@@ -26,7 +38,7 @@ export default function GameHome() {
           />
           </Link>
           <Link
-            href="/story/setting"
+            href="/pages/story/setting"
             className="text-xl sm:text-xl text-gray-700 font-medium font-schoolbell relative group flex items-center"
           >Setting
           <span

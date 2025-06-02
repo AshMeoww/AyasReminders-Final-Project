@@ -7,11 +7,9 @@ import StoryPart from "c:/Users/Administrator/Documents/GitHub/AyasReminders-Fin
 export default function Page1() {
   return (
     <div>
-
-
-
       <StoryPart
   background="/images/classroom.png"
+  onEndRedirect="/pages/story/day2"
   dialogues={[
     {
       text: "Welcome to “Berdeston”.",
@@ -86,8 +84,8 @@ export default function Page1() {
     {
       text: "Will you turn it off now?",
       choices: [
-        { text: "Yes. (Turn off AC and go to kitchen after closing the door.)", nextIndex: 16 },
-        { text: "Doesn’t matter. (Leave AC on and go to kitchen after closing the door.)", nextIndex: 17 },
+        { text: "Yes. (Turn off AC and go to kitchen after closing the door.)", nextIndex: 16, ecoPoints: 5},
+        { text: "Doesn’t matter. (Leave AC on and go to kitchen after closing the door.)", nextIndex: 17, ecoPoints: 5 },
         { text: "No, but I’ll come back for it later. (Leave door slightly open and go to kitchen.)", nextIndex: 18 },
       ],
     },
@@ -113,7 +111,6 @@ export default function Page1() {
       character: "/char1.png",
       name: "Narrator",
       text: "You enter the kitchen and see breakfast waiting for you.",
-      // end of this segment, no nextIndex needed unless story continues
     },
   ]}
 />
