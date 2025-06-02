@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 
 /* === CSS Variables === */
@@ -32,7 +33,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, sans-serif, Geologica, Figtree, Pixelify Sans, Schoolbell;
+  font-family: Arial, sans-serif, Geologica, Figtree, Pixelify Sans, Schoolbell, 'Press Start 2P', monospace;
 }
 
 /* === Font Utility Classes === */
@@ -101,6 +102,19 @@ body {
   min-height: 100%;
 }
 
+.bg-bedroom {
+  background-image: url('/images/bedroom.png');
+  background-position: center;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+
+.bg-kitchen {
+  background-image: url('/images/kitchen.png');
+  background-position: center;
+}
 
 
 @keyframes fadeIn {
