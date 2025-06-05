@@ -6,6 +6,7 @@ export default function Page1() {
     <div>
       <StoryPart
         background="/images/bedroom.png"
+        onEndRedirect="/pages/story/day3"
         dialogues={[
           { text: "It’s Tuesday! You wake up with a brand new sticky note beside you. It reads:", nextIndex: 1 },
           { text: "“I hope you had a great night's sleep sweetheart! I bought new toothbrushes yesterday so you can replace yours. It’s already been 3 months since you used that! As always, take care Aya <3”", nextIndex: 2 },

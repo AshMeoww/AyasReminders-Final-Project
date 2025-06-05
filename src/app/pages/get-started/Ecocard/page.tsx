@@ -1,6 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useStoryProgress } from "@/components/context/storyContext";
+
 
 function EcoCard() {
+  const router = useRouter(); 
+  const { day } = useStoryProgress();
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-start bg-forest bg-center pb-20">
       <h1 className="text-6xl font-bold text-black font-pixelify mt-36">
@@ -17,11 +24,12 @@ function EcoCard() {
           {/* button */}
           <div className="absolute inset-0 bg-opacity-50 flex flex-col items-center justify-between text-white p-4">
             {/* placeholder target */}
-            <Link href="/pages/story/home">
-              <button className="bg-[#1AB261] text-black px-10 py-3 rounded mt-56 font-bold text-lg border-4 border-black transition-transform duration-300 group-hover:scale-110 hover:bg-black hover:text-[#1AB261]">
-                CONTINUE
-              </button>
-            </Link>
+            <button
+              onClick={() => router.push(`/pages/story/day${day}`)}
+              className="bg-[#1AB261] text-black px-10 py-3 rounded mt-56 font-bold text-lg border-4 border-black transition-transform duration-300 group-hover:scale-110 hover:bg-black hover:text-[#1AB261]"
+            >
+              CONTINUE
+            </button>
           </div>
         </div>
         {/* impact summary */}
