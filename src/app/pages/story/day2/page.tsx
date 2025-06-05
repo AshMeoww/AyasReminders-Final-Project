@@ -1,5 +1,5 @@
 import React from "react";
-import StoryPart from "c:/Users/Administrator/Documents/GitHub/AyasReminders-Final-Project/components/ui/StoryPart";
+import StoryPart from "@/components/ui/StoryPart";
 
 export default function Page1() {
   return (
