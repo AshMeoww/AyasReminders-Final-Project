@@ -36,7 +36,7 @@ export default function Page1() {
     { text: "Salad (a caesar salad you’ve always wanted to eat!)", nextIndex: 16 },
     { text: "Chicken Curry (the chicken curry you love!)", nextIndex: 17 },
     { text: "Chopsuey (your favorite dish: Chopsuey!)", nextIndex: 18 },
-    { text: "What will you eat this morning?", nextIndex: 19 },
+    { text: "What will you eat this morning?", nextIndex: 19, music: "/music/i_dont_know.mp3" },
     {
       text: "Choose your meal:",
       choices: [

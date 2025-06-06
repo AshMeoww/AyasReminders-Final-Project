@@ -14,6 +14,7 @@ type Dialogue = {
   name?: string;
   text: string;
   background?: string;
+  music?: string;
   condition?: (flags: { [key: string]: any }) => boolean;
   choices?: {
     text: string;
@@ -30,8 +31,9 @@ type StoryPartProps = {
   onEndRedirect?: string;
 };
 
+
 export default function StoryPart({ background: backgroundProp, dialogues, onEndRedirect }: StoryPartProps) {
-  const { playSfx1, playSfx2, playTypingSfx, stopTypingSfx,  } = useVolume();
+  const { playSfx1, playSfx2, playTypingSfx, stopTypingSfx, setMusicSrc,  } = useVolume();
   const { ecoPoints, addEcoPoints } = useEco();
   const router = useRouter();
   const [jumpToIndex, setJumpToIndex] = useState<number | null>(null);
@@ -44,6 +46,8 @@ export default function StoryPart({ background: backgroundProp, dialogues, onEnd
   const [currentBackground, setCurrentBackground] = useState(background || backgroundProp);
   const [fade, setFade] = useState(true);
   const [bg, setBg] = useState(currentBackground);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
 
   // Utility: Get next valid dialogue index based on condition
 const getNextValidDialogueIndex = (
@@ -67,6 +71,12 @@ useEffect(() => {
 
   return () => clearTimeout(timeout);
 }, [currentBackground]);
+
+useEffect(() => {
+  if (currentDialogue?.music) {
+    setMusicSrc(currentDialogue.music);
+  }
+}, [currentDialogue?.music, setMusicSrc]);
 
 // Typing effect
 useEffect(() => {
