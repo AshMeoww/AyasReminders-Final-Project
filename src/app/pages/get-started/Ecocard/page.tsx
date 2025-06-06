@@ -25,7 +25,7 @@ function EcoCard() {
           <div className="absolute inset-0 bg-opacity-50 flex flex-col items-center justify-between text-white p-4">
             {/* placeholder target */}
             <button
-              onClick={() => router.push(`/pages/story/day${day}`)}
+              onClick={() => router.push(`/pages/story/home`)}
               className="bg-[#1AB261] text-black px-10 py-3 rounded mt-56 font-bold text-lg border-4 border-black transition-transform duration-300 group-hover:scale-110 hover:bg-black hover:text-[#1AB261]"
             >
               CONTINUE
