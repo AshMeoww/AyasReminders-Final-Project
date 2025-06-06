@@ -4,7 +4,7 @@
 import React from "react";
 import StoryPart from "@/components/ui/StoryPart";
 
-export default function Page1() {
+export default function Page5() {
   return (
     <div>
       <StoryPart

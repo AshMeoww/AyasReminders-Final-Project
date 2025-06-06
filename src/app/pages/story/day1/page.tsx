@@ -11,7 +11,7 @@ export default function Page1() {
   background="/images/white.jpg"
   onEndRedirect="/pages/story/day2"
   dialogues={[
-    { text: "ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤDay 1", nextIndex: 1, background: "/images/white.jpg" },
+    { text: "Let’s start the day bright — but not too bright. Remember, even little lights matter....", nextIndex: 1, background: "/images/white.jpg" },
     { text: "Welcome to “Berdeston”. You have been here since you were born, and this city shaped who you are.", nextIndex: 2, background: "/images/Day1/Bedroom.PNG" },
     { text: "You live with your mother who works tirelessly for you, because your father died of an unfortunate accident. Nevertheless, you grew up well taken care of by your mother.", nextIndex: 3 },
     { text: "The sound of your alarm clock wakes you up. It’s time to get ready for school.", nextIndex: 4 },

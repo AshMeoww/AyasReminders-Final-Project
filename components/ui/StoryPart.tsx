@@ -3,7 +3,6 @@
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Settings } from "lucide-react";
 import { useVolume } from "@/components/context/VolumeContext";
 import { useEco } from "@/components/context/ecoPointContext";
 import { useStoryProgress } from "@/components/context/storyContext";
@@ -43,6 +42,8 @@ export default function StoryPart({ background: backgroundProp, dialogues, onEnd
   const currentDialogue = dialogues[dialogueIndex];
   const { flags, setFlag } = useStoryFlags();
   const [currentBackground, setCurrentBackground] = useState(background || backgroundProp);
+  const [fade, setFade] = useState(true);
+  const [bg, setBg] = useState(currentBackground);
 
   // Utility: Get next valid dialogue index based on condition
 const getNextValidDialogueIndex = (
@@ -56,6 +57,16 @@ const getNextValidDialogueIndex = (
   }
   return -1; // fallback if nothing matches
 };
+
+useEffect(() => {
+  setFade(false);
+  const timeout = setTimeout(() => {
+    setBg(currentBackground); // change image source
+    setFade(true);
+  }, 400); // match transition duration
+
+  return () => clearTimeout(timeout);
+}, [currentBackground]);
 
 // Typing effect
 useEffect(() => {
@@ -262,15 +273,26 @@ const handleChoiceClick = (
       {/* Background Image */}
       <div className="fixed top-0 left-0 w-full h-screen bg-gray-400 z-0">
         <div className="relative w-[80vw] h-full mx-auto">
-          <Image
-            src={currentBackground}
-            alt="Background"
-            fill
-            className="object-cover"
-            priority
+          {/* Image with fade */}
+          <div
+            className={`fade-transition relative w-full h-full ${fade ? "opacity-100" : "opacity-0"}`}
+          >
+            <Image
+              src={bg}
+              alt="Background"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div
+            className={`absolute top-0 left-0 w-full h-full bg-white pointer-events-none transition-opacity duration-300 ${
+              fade ? "opacity-0" : "opacity-100"
+            }`}
           />
         </div>
       </div>
+
 
       {/* Dialogue Box */}
       <div className="fixed bottom-8 left-0 right-0 w-full max-w-4xl h-40 bg-white border-4 border-black p-4 mx-auto">
@@ -310,7 +332,7 @@ const handleChoiceClick = (
           {currentDialogue.choices.map((choice, index) => (
             <button
               key={index}
-              className="bg-white text-black py-3 px-5 hover:bg-gray-600 border-4 border-black w-full text-left"
+              className="bg-white text-black py-3 px-5 hover:border-yellow-400 border-4 border-black w-full text-left"
               onClick={(e) => {
                 e.stopPropagation();
                 handleChoiceClick(choice.nextIndex, choice.ecoPoints, choice.setState);
