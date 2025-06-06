@@ -13,7 +13,7 @@ export default function GameHome() {
 
         <div className="mt-8 flex flex-row space-x-32">
           <Link
-            href="/pages/story/Day1"
+            href="/pages/story/page1"
             className="text-xl sm:text-xl text-green-600 font-meduim font-schoolbell relative group flex items-center"
           > Start
           <span
@@ -26,7 +26,7 @@ export default function GameHome() {
           />
           </Link>
           <Link
-            href="/pages/story/setting"
+            href="/story/setting"
             className="text-xl sm:text-xl text-gray-700 font-medium font-schoolbell relative group flex items-center"
           >Setting
           <span
