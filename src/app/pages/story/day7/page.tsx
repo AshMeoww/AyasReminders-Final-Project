@@ -9,7 +9,7 @@ export default function Page7() {
     <div>
       <StoryPart
   background="/images/white.jpg"
-  onEndRedirect="/pages/story/day4"
+  onEndRedirect="/pages/get-started/Ecocard"
   dialogues={[
     {text: "Day : What do you see when you look back?.........", nextIndex: 1, background: "/images/white.jpg"},
     {text: "There’s no sticky note today.", nextIndex: 2, background: "/images/Day7/Bedroom-day7.PNG"},
