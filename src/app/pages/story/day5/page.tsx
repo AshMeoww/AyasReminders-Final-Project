@@ -8,25 +8,25 @@ export default function Page5() {
   return (
     <div>
       <StoryPart
-  background="/images/classroom.png"
+  background="/images/white.jpg"
   onEndRedirect="/pages/story/day6   "
   dialogues={[
-    {text: "It’s Saturday.", nextIndex: 1},
-    { text: "Today feels different.", nextIndex: 2 },
+    {text: "Day 5: Some steps leave smaller footprints......", nextIndex: 1},
+    { text: "It’s Saturday. Today feels different.", nextIndex: 2, background: "/images/Day5/Bedroom-day5.PNG" },
     { text: "The air is cooler, and a quiet breeze slips through the window.", nextIndex: 3 },
     { text: "As expected, a note waits beside you. It reads:", nextIndex: 4 },
     { text: "“Good morning, sweetheart! I have a surprise for you outside.", nextIndex: 5 },
     { text: "I prepared your father’s old bike.", nextIndex: 6 },
     { text: "It still has a lot of life left in it—", nextIndex: 7 },
     { text: "Maybe it just needs someone gentle enough to try.”", nextIndex: 8 },
-    { text: "Outside, leaning near the gate, is the old bike—helmet resting on the handlebar.", nextIndex: 9 },
+    { text: "Outside, leaning near the gate, is the old bike—helmet resting on the handlebar.", nextIndex: 9, background: "/images/Day5/Helmet-day5.PNG" },
     { text: "You remember it well.", nextIndex: 10 },
     { text: "Your father taught you how to ride using that very frame.", nextIndex: 11 },
     { text: "Just looking at it brings back the quiet sound of laughter, the wobble of early tries,", nextIndex: 12 },
     { text: "and the steadiness of someone always holding on.", nextIndex: 13 },
     { text: "You move through your morning routine.", nextIndex: 14 },
     { text: "Eat. Shower. Unplug. Prepare.", nextIndex: 15 },
-    { text: "But just as you’re about to head out, your eyes land on the bike again.", nextIndex: 16 },
+    { text: "But just as you’re about to head out, your eyes land on the bike again.", nextIndex: 16, background: "/images/Day5/Garage-bike-day5.PNG" },
     { text: "You pause.", nextIndex: 17 },
     { text: "You set your things down.", nextIndex: 18 },
     { text: "You're not running late.", nextIndex: 19 },
@@ -41,7 +41,8 @@ export default function Page5() {
 
     {
       text: "You brought the bike.",
-      nextIndex: 21
+      nextIndex: 21,
+      background: "/images/Day1/Roadwithcars.PNG"
     },
     {
       text: "You put on the helmet and ride to your school.",
@@ -55,7 +56,8 @@ export default function Page5() {
       name: "Ray",
       character: "/images/Characters/Ray-game.PNG",
       text: "Doing something different today, huh.",
-      nextIndex: 24
+      nextIndex: 24,
+      background: "/images/Day2/school.PNG"
     },
     {
       name: "Ray",
@@ -82,6 +84,7 @@ export default function Page5() {
     {
       text: "You continue with your routine.",
       nextIndex: 29
+      , background: "/images/Day5/Busstop-day3.PNG"
     },
     {
       text: "Riding the bike feels tiring, and riding the bus is more comfortable.",
@@ -89,7 +92,8 @@ export default function Page5() {
     },
     {
       text: "At school, Eireen and Ray greet you.",
-      nextIndex: 31
+      nextIndex: 31,
+      background: "/images/Day2/school.PNG"
     },
     {
       name: "Eireen",
@@ -114,6 +118,7 @@ export default function Page5() {
       character: "/images/Characters/Austline-game.PNG",
       text: "Don’t worry—no wrong answers.",
       nextIndex: 35,
+      background: "/images/Day5/Classroom-day5.PNG"
     },
     {
       name: "Ms. Austline",
