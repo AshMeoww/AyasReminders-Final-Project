@@ -33,7 +33,16 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, sans-serif, Geologica, Figtree, Pixelify Sans, Schoolbell;
+  cursor: url('/images/Clover.cur'), auto;
+
 }
+
+:where(*, a, button, input, textarea, [contenteditable], [role="button"], [draggable], .draggable, .resizable) {
+  cursor: url('/images/Normal.cur'), auto;
+}
+
+
+
 
 /* === Font Utility Classes === */
 .font-pixelify {
@@ -161,5 +170,7 @@ input[type="range"]::-moz-range-thumb {
   border: none;
   cursor: pointer;
 }
+
+
 
 

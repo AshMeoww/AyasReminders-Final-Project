@@ -16,7 +16,7 @@ export default function Page7() {
   background="/images/white.jpg"
   onEndRedirect="/pages/story/day4"
   dialogues={[
-    {text: "Day : What do you see when you look back?.........", nextIndex: 1, background: "/images/white.jpg"},
+    {text: "Day 7: What do you see when you look back?.........", nextIndex: 1, background: "/images/white.jpg"},
     {text: "There’s no sticky note today.", nextIndex: 2, background: "/images/Day7/Bedroom-day7.PNG"},
     {text: "No reminder taped to the mirror.", nextIndex: 3},
     {text: "Just the hush of a slow morning, and the bike leaning outside—still and quiet.", nextIndex: 4},
@@ -108,7 +108,7 @@ export default function Page7() {
       },
       {text: "You pedal in silence, taking it in.", nextIndex: 41},
       {text: "You feel the wind. And the weight.", nextIndex: 42},
-      {text: "And still—something light.", nextIndex: 49},
+      {text: "And still—something light.", nextIndex: 48},
       
       // No path
       {text: "You find a bench under a tree.", nextIndex: 44, background: "/images/Day6/townpark-day6.PNG"},
@@ -120,24 +120,24 @@ export default function Page7() {
         text: "He believed in small efforts. In making things last.",
         nextIndex: 47,
       },
-      {text: "You nod. You get it now.", nextIndex: 49, background: "/images/Day7/Clouds-for-ending.PNG"},
+      {text: "You nod. You get it now.", nextIndex: 48, background: "/images/Day7/Clouds-for-ending.PNG"},
       
       // Shared closing
       {
         text: "He didn’t leave instructions or a guidebook.",
-        nextIndex: 50,
+        nextIndex: 49,
       },
       {
         text: "Just a way of living. Gentle. Thoughtful. Light on the world.",
-        nextIndex: 51,
+        nextIndex: 50,
       },
       {
         text: "You see it now—in the choices you’ve made, and the ones waiting ahead.",
-        nextIndex: 52,
+        nextIndex: 51,
       },
       {
         text: "Tomorrow, the reminders might return.",
-        nextIndex: 53,
+        nextIndex: 52,
       },
       {
         text: "But today… you remembered why they matter.",
