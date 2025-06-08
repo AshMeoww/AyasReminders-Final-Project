@@ -250,7 +250,8 @@ export default function Page5() {
 
     {
       text: "At lunch, the conversation shifts from carbon footprints to weekend plans.",
-      nextIndex: 58
+      nextIndex: 58,
+      background: "/images/Day4/Soda_garbageCan-day4.PNG"
     },
     {
       name: "Eireen",
@@ -394,7 +395,8 @@ export default function Page5() {
     {
       condition: (flags) => flags.takeBike === true,
       text: "The two of you approach the bike, appreciating its beauty and remembering the past.",
-      nextIndex: 83
+      nextIndex: 83,
+      background: "/images/Day5/Garage-bike-day5.PNG"
     },
     {
       condition: (flags) => flags.takeBike === true,
@@ -426,7 +428,8 @@ export default function Page5() {
       condition: (flags) => flags.takeBike === true,
       name: "Aya",
       text: "See you tomorrow.",
-      nextIndex: 88
+      nextIndex: 88,
+      background: "/images/Day3/RoadSunset-day3.PNG"
     },
     {
       condition: (flags) => flags.takeBike === true,
@@ -443,7 +446,8 @@ export default function Page5() {
     {
       condition: (flags) => flags.takeBike === true,
       text: "You get home, drop your bag by the door, and head to the kitchen.",
-      nextIndex: 91
+      nextIndex: 91,
+      background: "/images/Day3/HomeSunset-day3.PNG"
     },
     {
       condition: (flags) => flags.takeBike === true,
@@ -468,7 +472,8 @@ export default function Page5() {
     {
       condition: (flags) => flags.takeBike === true,
       text: "Your eyes land on the bike helmet sitting on the desk.",
-      nextIndex: 96
+      nextIndex: 96,
+      background: "/images/Day5/Helmet-day5.PNG"
     },
     {
       condition: (flags) => flags.takeBike === true,
@@ -509,7 +514,9 @@ export default function Page5() {
     {
       condition: (flags) => flags.takeBike === true,
       text: "Then lie back on the bed.",
-      nextIndex: 104
+      nextIndex: 104,
+      background: "/images/Day5/BedroomNight-day5.PNG"
+
     },
     {
       condition: (flags) => flags.takeBike === true,
@@ -525,7 +532,9 @@ export default function Page5() {
     
     {
       text: "The two of you wait at the bus stop, and chat about tomorrow.",
-      nextIndex: 107
+      nextIndex: 107,
+      background: "/images/Day5/Busstop-sunset-day5.PNG"
+
     },
     {
       name: "Eireen",
@@ -561,7 +570,8 @@ export default function Page5() {
     },
     {
       text: "You both board the bus, and patiently wait to arrive at your homes.",
-      nextIndex: 114
+      nextIndex: 114,
+      background: "/images/Day5/InsideBus-day5.PNG"
     },
     {
       text: "Nearing yours, Eireen woke up to your efforts.",
@@ -585,7 +595,8 @@ export default function Page5() {
     },
     {
       text: "You get home, drop your bag by the door, and head to the kitchen.",
-      nextIndex: 119
+      nextIndex: 119,
+      background: "/images/Day3/HomeSunset-day3.PNG"
     },
     {
       text: "There’s leftover food in the fridge—still fine. You eat, wash up, then head to your room.",
@@ -593,7 +604,8 @@ export default function Page5() {
     },
     {
       text: "You scroll on your phone for a bit.",
-      nextIndex: 121
+      nextIndex: 121,
+      background: "/images/Day5/BedroomNight-day5.PNG"
     },
     {
       text: "Mostly half-looking at things.",
@@ -646,10 +658,10 @@ export default function Page5() {
     {
       text: "You hope it’ll be fun.",
       nextIndex: 134
-    }
-    
- 
-  
+    },
+    {
+      text: "Day 5: End.................",
+    } 
   ]}
 />
 
