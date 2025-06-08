@@ -49,71 +49,25 @@ export function VolumeProvider({ children }: { children: ReactNode }) {
   const typingRef = useRef<HTMLAudioElement>(null);
   const pathname = usePathname();
 
-  // Fade helper
-  function fadeAudio(
-    audio: HTMLAudioElement,
-    fromVolume: number,
-    toVolume: number,
-    duration: number,
-    onComplete?: () => void
-  ) {
-    const steps = 20; // number of increments
-    const stepTime = duration / steps;
-    let currentStep = 0;
-    const volumeStep = (toVolume - fromVolume) / steps;
-
-    audio.volume = fromVolume;
-
-    const interval = setInterval(() => {
-      currentStep++;
-      let newVolume = audio.volume + volumeStep;
-      if (newVolume > 1) newVolume = 1;
-      if (newVolume < 0) newVolume = 0;
-      audio.volume = newVolume;
-
-      if (currentStep >= steps) {
-        clearInterval(interval);
-        if (onComplete) onComplete();
-      }
-    }, stepTime);
-  }
-
-  // Handle musicSrc change with fade out + fade in
+  // Auto play or pause music based on route and musicSrc changes
   useEffect(() => {
     if (!musicRef.current) return;
 
     const inStory = pathname?.startsWith("/pages/story");
 
-    if (!inStory) {
-      // If not in story, just pause music
+    musicRef.current.src = musicSrc;
+    musicRef.current.load();
+    musicRef.current.volume = masterVolume * musicVolume;
+
+    if (inStory) {
+      musicRef.current.play().catch(() => {});
+    } else {
       musicRef.current.pause();
       musicRef.current.currentTime = 0;
-      return;
     }
+  }, [pathname, masterVolume, musicVolume, musicSrc]);
 
-    const audio = musicRef.current;
-
-    // If already playing, fade out then change source and fade in
-    if (!audio.paused) {
-      fadeAudio(audio, audio.volume, 0, 5000, () => {
-        audio.src = musicSrc;
-        audio.load();
-        audio.currentTime = 0;
-        audio.play().catch(() => {});
-        fadeAudio(audio, 0, masterVolume * musicVolume, 10000);
-      });
-    } else {
-      // Not playing yet, just set src and fade in
-      audio.src = musicSrc;
-      audio.load();
-      audio.currentTime = 0;
-      audio.volume = 0;
-      audio.play().catch(() => {});
-      fadeAudio(audio, 0, masterVolume * musicVolume, 5000);
-    }
-  }, [musicSrc, pathname, masterVolume, musicVolume]);
-
-
+  // Functions to play music and sfx
   function playMusic() {
     if (musicRef.current && musicRef.current.paused) {
       musicRef.current.play();
@@ -174,7 +128,7 @@ export function VolumeProvider({ children }: { children: ReactNode }) {
         stopMusic,
         playTypingSfx,
         stopTypingSfx,
-        setMusicSrc,
+        setMusicSrc,  // <-- expose setter here
       }}
     >
       {/* Global audio players, hidden */}

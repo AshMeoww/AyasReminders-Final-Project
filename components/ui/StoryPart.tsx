@@ -205,7 +205,9 @@ const handleChoiceClick = (
         onClick={(e) => {
           e.stopPropagation();
           resetDialogue();
+          setDialogueHistory([]);
           playSfx1();
+          router.push(`/pages/story/day${day}`)
         }}
         onMouseEnter={() => playSfx2()}
       >
