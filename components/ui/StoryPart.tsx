@@ -7,6 +7,7 @@ import { useVolume } from "@/components/context/VolumeContext";
 import { useEco } from "@/components/context/ecoPointContext";
 import { useStoryProgress } from "@/components/context/storyContext";
 import { useStoryFlags } from "@/components/context/storyFlags";
+import secondaryBg from "@/public/images/GameBG-colored.png";
 
 
 type Dialogue = {
@@ -282,6 +283,14 @@ const handleChoiceClick = (
 
       {/* Background Image */}
       <div className="fixed top-0 left-0 w-full h-screen bg-gray-400 z-0">
+      <div className="absolute top-0 left-0 w-full h-full z-[-1]">
+        <Image
+          src={secondaryBg}
+          alt="Secondary Background"
+          fill
+          className="object-cover"
+        />
+      </div>
         <div className="relative w-[80vw] h-full mx-auto">
           {/* Image with fade */}
           <div
