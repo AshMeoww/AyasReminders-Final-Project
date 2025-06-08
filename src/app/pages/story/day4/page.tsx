@@ -298,7 +298,7 @@ export default function Page4() {
     {
       text: "Your answer in class—it just came out.",
       nextIndex: 56,
-      background: "/images/Day1/Roadwithcars.PNG"
+      background: "/images/Day3/Roadsunset-day3.PNG"
     },
     {
       text: "You didn’t plan it. You rarely speak up.",

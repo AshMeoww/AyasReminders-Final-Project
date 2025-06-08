@@ -160,11 +160,10 @@ const handleClick = () => {
   if (displayedLength < currentDialogue.text.length) {
     cancelTypingRef.current = true;
   } else if (currentDialogue.choices?.length) {
-    return; // wait for user to select choice
+    return;
   } else if (currentDialogue.nextIndex !== undefined) {
     setDialogueIndex(currentDialogue.nextIndex);
   } else {
-    console.log("End of dialogue");
     if (onEndRedirect) {
       setDay(day + 1);
       router.push(onEndRedirect);

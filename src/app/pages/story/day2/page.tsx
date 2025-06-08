@@ -48,7 +48,7 @@ export default function Page2() {
           {
             text: "You enjoy the pancakes made by your mother.",
             nextIndex: 15,
-            background: "/images/Day1/Pancakes.PNG"          },
+            background: "/images/Day2/Pancakes.PNG"          },
           {
             text: "After eating, you pour yourself a glass of water. It's...",
             nextIndex: 16,

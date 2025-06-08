@@ -184,7 +184,7 @@ export default function Page1() {
       nextIndex: 44,
     },
     {
-      character: "/images/Characters/Sir Waffles-game.PNG",
+      character: "/images/Characters/Waffles-game.PNG",
       name: "Sir Waffles",
       text: "Is everyone done?",
       nextIndex: 45,
@@ -196,25 +196,25 @@ export default function Page1() {
       nextIndex: 46,
     },
     {
-      character: "/images/Characters/Sir Waffles-game.PNG",
+      character: "/images/Characters/Waffles-game.PNG",
       name: "Sir Waffles",
       text: "Alright, take your seats with your groupmates and…",
       nextIndex: 47,
     },
     {
-      character: "/images/Characters/Sir Waffles-game.PNG",
+      character: "/images/Characters/Waffles-game.PNG",
       name: "Sir Waffles",
       text: "We’ll start from the back.",
       nextIndex: 48,
     },
     {
-      character: "/images/Characters/Student-game.PNG",
+      character: "/images/Characters/Silhouette-game.PNG",
       name: "Student",
       text: "Aw dang it!",
       nextIndex: 49,
     },
     {
-      character: "/images/Characters/Everyone-game.PNG",
+      character: "/images/Characters/Silhouette-game.PNG",
       name: "Everyone",
       text: "Hahahahaha..",
       nextIndex: 50,
@@ -292,7 +292,7 @@ export default function Page1() {
       name: "Eireen",
       text: "Hey, our group killed it earlier!",
       nextIndex: 65,
-      background: "/images/Day3/RoadSunset.PNG"
+      background: "/images/Day3/RoadSunset-day3.PNG"
     },
     {
       character: "/images/Characters/Eireen-game.PNG",
@@ -384,7 +384,7 @@ export default function Page1() {
     {
       text: "Inside, a couple of okay-looking paper bags are left on the kitchen counter.",
       nextIndex: 82,
-      background: "/images/Day3Paperbag-day3.PNG"
+      background: "/images/Day3/Paperbag-day3.PNG"
     },
     {
       text: "What will you do?",

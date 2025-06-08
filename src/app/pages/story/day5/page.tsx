@@ -193,20 +193,20 @@ export default function Page5() {
       nextIndex: 47
     },
     {
-      name: "Ma’am Austline",
-      character: "/images/Characters/Ma’amAustline-game.PNG",
+      name: "Ms. Austline",
+      character: "/images/Characters/Austline-game.PNG",
       text: "Thank you, Fransette. That’s honest.",
       nextIndex: 48
     },
     {
-      name: "Ma’am Austline",
-      character: "/images/Characters/Ma’amAustline-game.PNG",
+      name: "Ms. Austline",
+      character: "/images/Characters/Austline-game.PNG",
       text: "Sometimes we know better, but it’s not always easy.",
       nextIndex: 49
     },
     {
-      name: "Ma’am Austline",
-      character: "/images/Characters/Ma’amAustline-game.PNG",
+      name: "Ms. Austline",
+      character: "/images/Characters/Austline-game.PNG",
       text: "What matters is that we start noticing.",
       nextIndex: 50
     },
@@ -215,8 +215,8 @@ export default function Page5() {
       nextIndex: 51
     },
     {
-      name: "Ma’am Austline",
-      character: "/images/Characters/Ma’amAustline-game.PNG",
+      name: "Ms. Austline",
+      character: "/images/Characters/Austline-game.PNG",
       text: "We move through the world every day—but how often do we stop to ask how?",
       nextIndex: 52
     },
@@ -229,20 +229,20 @@ export default function Page5() {
       nextIndex: 54
     },
     {
-      name: "Ma’am Austline",
-      character: "/images/Characters/Ma’amAustline-game.PNG",
+      name: "Ms. Austline",
+      character: "/images/Characters/Austline-game.PNG",
       text: "While you eat, think about this—",
       nextIndex: 55
     },
     {
-      name: "Ma’am Austline",
-      character: "/images/Characters/Ma’amAustline-game.PNG",
+      name: "Ms. Austline",
+      character: "/images/Characters/Austline-game.PNG",
       text: "How far did your lunch travel?",
       nextIndex: 56
     },
     {
-      name: "Ma’am Austline",
-      character: "/images/Characters/Ma’amAustline-game.PNG",
+      name: "Ms. Austline",
+      character: "/images/Characters/Austline-game.PNG",
       text: "And when you travel this weekend, could you do it differently?",
       nextIndex: 57
     },
@@ -427,6 +427,7 @@ export default function Page5() {
     {
       condition: (flags) => flags.takeBike === true,
       name: "Aya",
+      character: "/images/Characters/Aya-game.PNG",
       text: "See you tomorrow.",
       nextIndex: 88,
       background: "/images/Day3/RoadSunset-day3.PNG"
@@ -526,7 +527,7 @@ export default function Page5() {
     {
       condition: (flags) => flags.takeBike === true,
       text: "You hope it’ll be fun.",
-      nextIndex: 106
+      nextIndex: 134
     },
     
     
