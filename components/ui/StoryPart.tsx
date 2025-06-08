@@ -8,7 +8,7 @@ import { useEco } from "@/components/context/ecoPointContext";
 import { useStoryProgress } from "@/components/context/storyContext";
 import { useStoryFlags } from "@/components/context/storyFlags";
 import secondaryBg from "@/public/images/GameBG-colored.png";
-
+import { RotateCcw, RefreshCcw, Trash2 } from 'lucide-react';
 
 type Dialogue = {
   character?: string;
@@ -37,7 +37,6 @@ export default function StoryPart({ background: backgroundProp, dialogues, onEnd
   const { playSfx1, playSfx2, playTypingSfx, stopTypingSfx, setMusicSrc,  } = useVolume();
   const { ecoPoints, addEcoPoints } = useEco();
   const router = useRouter();
-  const [jumpToIndex, setJumpToIndex] = useState<number | null>(null);
   const { dialogueIndex, setDialogueIndex, day, setDay, resetDialogue, background, setBackground, resetIndex } = useStoryProgress();  const [displayedLength, setDisplayedLength] = useState(0);
   const cancelTypingRef = useRef(false);
   const [dialogueHistory, setDialogueHistory] = useState<Dialogue[]>([]);
@@ -47,8 +46,6 @@ export default function StoryPart({ background: backgroundProp, dialogues, onEnd
   const [currentBackground, setCurrentBackground] = useState(background || backgroundProp);
   const [fade, setFade] = useState(true);
   const [bg, setBg] = useState(currentBackground);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
 
   // Utility: Get next valid dialogue index based on condition
 const getNextValidDialogueIndex = (
