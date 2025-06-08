@@ -11,7 +11,7 @@ export default function Page1() {
         background="/images/white.jpg"
   onEndRedirect="/pages/story/day4"
   dialogues={[
-    {text: "Day 3: Before you throw it, ask: Can it go again?", nextIndex: 1},
+    {text: "Day 3: Before you throw it, ask: Can it go again?", nextIndex: 1,music: "/music/bgm/morning/morning1.mp3"},
     {text: "A brand new day, but same old routine.", nextIndex: 2, background: "/images/Day3/Bedroom-day3.PNG"},
     {text: "You wake up feeling a little groggy,", nextIndex: 3},
     {text: "But just like any other day, your mother is gone and a sticky note greets you.", nextIndex: 4},
@@ -26,7 +26,8 @@ export default function Page1() {
       character: "/images/Characters/Silhouette-game.PNG",
       name: "?????",
       text: "Hey Aya",
-      nextIndex: 12
+      nextIndex: 12,
+      music: "/music/bgm/classroom/3classroom.mp3"
     },
     {
       character: "/images/Characters/Silhouette-game.PNG",
@@ -380,6 +381,7 @@ export default function Page1() {
       text: "Your home is welcoming you once again, ready to look over you.",
       nextIndex: 81,
       background: "/images/Day3/HomeSunset-day3.PNG"
+      ,music: "/music/bgm/nighttime/3nighttime.mp3"
     },
     {
       text: "Inside, a couple of okay-looking paper bags are left on the kitchen counter.",

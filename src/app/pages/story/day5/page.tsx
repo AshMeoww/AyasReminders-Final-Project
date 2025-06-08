@@ -11,11 +11,11 @@ export default function Page5() {
   background="/images/white.jpg"
   onEndRedirect="/pages/story/day6   "
   dialogues={[
-    {text: "Day 5: Some steps leave smaller footprints......", nextIndex: 1},
-    { text: "It’s Saturday. Today feels different.", nextIndex: 2, background: "/images/Day5/Bedroom-day5.PNG" },
+    {text: "Day 5: Some steps leave smaller footprints......", nextIndex: 1,music: "/music/bgm/morning/morning1.mp3"},
+    { text: "It’s Saturday. Today feels different.", nextIndex: 2 },
     { text: "The air is cooler, and a quiet breeze slips through the window.", nextIndex: 3 },
     { text: "As expected, a note waits beside you. It reads:", nextIndex: 4 },
-    { text: "“Good morning, sweetheart! I have a surprise for you outside.", nextIndex: 5 },
+    { text: "“Good morning, sweetheart! I have a surprise for you outside.", nextIndex: 5, background: "/images/Day5/Bedroom-day5.PNG" },
     { text: "I prepared your father’s old bike.", nextIndex: 6 },
     { text: "It still has a lot of life left in it—", nextIndex: 7 },
     { text: "Maybe it just needs someone gentle enough to try.”", nextIndex: 8 },
@@ -118,7 +118,8 @@ export default function Page5() {
       character: "/images/Characters/Austline-game.PNG",
       text: "Don’t worry—no wrong answers.",
       nextIndex: 35,
-      background: "/images/Day5/Classroom-day5.PNG"
+      background: "/images/Day5/Classroom-day5.PNG",
+      music: "/music/bgm/classroom/classroom3.mp3"
     },
     {
       name: "Ms. Austline",
@@ -389,7 +390,8 @@ export default function Page5() {
     },
     {
       text: "You and Eireen bid farewell to the three of them and make your way outside too.",
-      nextIndex: 82
+      nextIndex: 82,
+      music: "/music/bgm/uwian/uwian2.mp3"
     },
     
     {

@@ -11,7 +11,7 @@ export default function Page6() {
   background="/images/white.jpg"
   onEndRedirect="/pages/story/day7"
   dialogues={[
-    {text: "Day 6: Kind words can grow greener things.........", nextIndex: 1, background: "/images/white.jpg"},
+    {text: "Day 6: Kind words can grow greener things.........", nextIndex: 1, background: "/images/white.jpg", music: "/music/bgm/Day6.mp3"},
     {text: "It’s Saturday.", nextIndex: 2},
     {text: "The sun’s already out, but the air’s still cool.", nextIndex: 3, background: "/images/Day6/Garage-bike-day6.PNG"},
     {text: "You haven’t even changed yet, but you’re already looking outside.", nextIndex: 4},
@@ -354,12 +354,6 @@ export default function Page6() {
       {
         text: "Day 6: End...................................... ",
       }
-      
-      
-      
-
-      
-
   ]}
 />
     </div>

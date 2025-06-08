@@ -213,7 +213,8 @@ export default function Page1() {
     },
     {
       text: "Slowly, the other students emerge from the bus as well and head to their classrooms. You and Eireen also do the same.",
-      nextIndex: 77
+      nextIndex: 77,
+      music: "/music/bgm/classroom/classroom.mp3"
     },
     {
       text: "On the way to your classroom, you notice posters posted on the walls of the hallway.",
@@ -757,7 +758,8 @@ export default function Page1() {
       name: "Eireen",
       character: "/images/Characters/Eireen-game.PNG",
       text: "Yeah, well… there’s the bus. Let’s go, Aya!", background: "/images/Day1/Busstop.PNG",
-      nextIndex: 171
+      nextIndex: 171,
+      music: "/music/bgm/morning/uwian.mp3"
     },
     {
       text: "The bus pulls up with a soft screech, its headlights blinking like tired eyes. You both climb aboard.",

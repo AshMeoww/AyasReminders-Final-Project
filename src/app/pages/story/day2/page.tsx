@@ -10,10 +10,10 @@ export default function Page2() {
         background="/images/white.jpg"
         onEndRedirect="/pages/story/day3"
         dialogues={[
-          { text: "Day 2: Don’t let it all go down the drain.", nextIndex: 1 },
-          { text: "It’s Tuesday! You wake up with a brand new sticky note beside you. It reads:", nextIndex: 2, background: "/images/Day1/Bedroom.PNG" },
+          { text: "Day 2: Don’t let it all go down the drain.", nextIndex: 1 ,music: "/music/bgm/morning/2morning.mp3"},
+          { text: "It’s Tuesday! You wake up with a brand new sticky note beside you. It reads:", nextIndex: 2 },
           { text: "“I hope you had a great night's sleep sweetheart! I bought new toothbrushes yesterday so you can replace yours. It’s already been 3 months since you used that! As always, take care Aya <3”", nextIndex: 3 },
-          { text: "Another one reads: “Every drop adds up — let it run and that's 50 pesos down the drain. Love, Mom 💧”", nextIndex: 4 },
+          { text: "Another one reads: “Every drop adds up — let it run and that's 50 pesos down the drain. Love, Mom ”", nextIndex: 4 , background: "/images/Day1/Bedroom.PNG"},
           { text: "As usual, you make your bed and turn off the AC and lights before you go to the kitchen. On the kitchen table, you notice three toothbrushes - each with a different color.", nextIndex: 5 , background: "/images/Day2/3toothbrushes.PNG"},
           { text: "What will you pick?", nextIndex: 6 },
           {
@@ -197,6 +197,7 @@ export default function Page2() {
           {
             text: "On your left, you see and hear Ray and Eireen chatting.",
             nextIndex: 54
+            ,music: "/music/bgm/classroom/classroom2.mp3"
           },
           {
             name: "Ray",
@@ -779,6 +780,7 @@ export default function Page2() {
           {
             text: "You nod, and the two of you begin walking toward the school gates together. The hallway is quieter now — footsteps echo gently against the walls, the day finally catching up with everyone.",
             nextIndex: 154,
+            music: "/music/bgm/uwian/uwian2.mp3"
           },
           {
             text: "Outside, the afternoon sun hangs low, casting long shadows on the sidewalk.",

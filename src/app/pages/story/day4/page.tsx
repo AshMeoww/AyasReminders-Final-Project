@@ -11,11 +11,11 @@ export default function Page4() {
   background="/images/white.jpg"
   onEndRedirect="/pages/story/day5"
   dialogues={[
-    {text: "Day 4: Everything goes somewhere — make sure it goes where it should..........", nextIndex: 1, background: "/images/Day4/Bedroom-day4.PNG"},
+    {text: "Day 4: Everything goes somewhere — make sure it goes where it should..........", nextIndex: 1,music: "/music/bgm/morning/morning2.mp3"},
     {text: "A brand new day… and this time, you’re not as groggy.", nextIndex: 2},
     {text: "It's starting to feel like muscle memory—", nextIndex: 3},
     {text: "The stillness of the house, the morning light, and the sticky note waiting for you.", nextIndex: 4},
-    {text: "It reads: “Good morning, Aya. Let’s take care of what’s left behind. The world will thank you for it. <3”", nextIndex: 5},
+    {text: "It reads: “Good morning, Aya. Let’s take care of what’s left behind. The world will thank you for it. <3”", nextIndex: 5, background: "/images/Day4/Bedroom-day4.PNG"},
     {text: "You eat the last bit of leftover adobo from the fridge.", nextIndex: 6},
     {text: "There’s not much, but enough.", nextIndex: 7},
     {text: "You clean up, take a shower, unplug what’s unused, and head out to the bus stop.", nextIndex: 8, background: "/images/Day3/Busstop-day3.PNG"},

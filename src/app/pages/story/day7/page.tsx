@@ -11,8 +11,7 @@ export default function Page7() {
   background="/images/white.jpg"
   onEndRedirect="/pages/story/day4"
   dialogues={[
-    {text: "Day 7: What do you see when you look back?.........", nextIndex: 1, background: "/images/white.jpg"},
-    {text: "There’s no sticky note today.", nextIndex: 2, background: "/images/Day7/Bedroom-day7.PNG"},
+    {text: "There’s no sticky note today.", nextIndex: 2, background: "/images/Day7/Bedroom-day7.PNG", music: "/music/bgm/Day7.mp3"},
     {text: "No reminder taped to the mirror.", nextIndex: 3},
     {text: "Just the hush of a slow morning, and the bike leaning outside—still and quiet.", nextIndex: 4},
     {text: "You're not going to school today.", nextIndex: 5},
