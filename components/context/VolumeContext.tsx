@@ -19,6 +19,7 @@ type VolumeContextType = {
   setSfxVolume: (v: number) => void;
   playSfx1: () => void;
   playSfx2: () => void;
+  playSfx3: () => void;
   playMusic: () => void;
   stopMusic: () => void;
   playTypingSfx: () => void;
@@ -41,11 +42,12 @@ export function VolumeProvider({ children }: { children: ReactNode }) {
   const [musicVolume, setMusicVolume] = useState(1);
   const [sfxVolume, setSfxVolume] = useState(1);
 
-  const [musicSrc, setMusicSrc] = useState("/music/bg.mp3");
+  const [musicSrc, setMusicSrc] = useState("/music/home.mp3");
 
   const musicRef = useRef<HTMLAudioElement>(null);
   const sfxRef1 = useRef<HTMLAudioElement>(null);
   const sfxRef2 = useRef<HTMLAudioElement>(null);
+  const sfxRef3 = useRef<HTMLAudioElement>(null);
   const typingRef = useRef<HTMLAudioElement>(null);
   const pathname = usePathname();
 
@@ -97,6 +99,14 @@ export function VolumeProvider({ children }: { children: ReactNode }) {
     }
   }
 
+  function playSfx3() {
+    if (sfxRef3.current) {
+      sfxRef3.current.volume = masterVolume * sfxVolume;
+      sfxRef3.current.currentTime = 0;
+      sfxRef3.current.play();
+    }
+  }
+
   function playTypingSfx() {
     if (typingRef.current) {
       typingRef.current.volume = masterVolume * sfxVolume;
@@ -125,6 +135,7 @@ export function VolumeProvider({ children }: { children: ReactNode }) {
         playMusic,
         playSfx1,
         playSfx2,
+        playSfx3,
         stopMusic,
         playTypingSfx,
         stopTypingSfx,
@@ -135,6 +146,7 @@ export function VolumeProvider({ children }: { children: ReactNode }) {
       <audio ref={musicRef} src={musicSrc} loop />
       <audio ref={sfxRef1} src="/sfx/sfx1.mp3" />
       <audio ref={sfxRef2} src="/sfx/sfx2.mp3" />
+      <audio ref={sfxRef3} src="/sfx/home.mp3" />
       <audio ref={typingRef} src="/sfx/typing.mp3" />
 
       {children}

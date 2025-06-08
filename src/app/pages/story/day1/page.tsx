@@ -17,11 +17,11 @@ export default function Page1() {
   background="/images/white.jpg"
   onEndRedirect="/pages/story/day2"
   dialogues={[
-    { text: "Let’s start the day bright — but not too bright. Remember, even little lights matter....", nextIndex: 1, background: "/images/white.jpg" },
-    { text: "Welcome to “Berdeston”. You have been here since you were born, and this city shaped who you are.", nextIndex: 2, background: "/images/Day1/Bedroom.PNG" },
+    { text: "Let’s start the day bright — but not too bright. Remember, even little lights matter....", nextIndex: 1,  music: "/music/bgm/start.mp3", background:"/images/white.jpg" },
+    { text: "Welcome to “Berdeston”. You have been here since you were born, and this city shaped who you are.", nextIndex: 2 },
     { text: "You live with your mother who works tirelessly for you, because your father died of an unfortunate accident. Nevertheless, you grew up well taken care of by your mother.", nextIndex: 3 },
     { text: "The sound of your alarm clock wakes you up. It’s time to get ready for school.", nextIndex: 4 },
-    { text: "You found a sticky note near your table beside your bed! It says…", nextIndex: 5 },
+    { text: "You found a sticky note near your table beside your bed! It says…", nextIndex: 5, background: "/images/Day1/Bedroom.PNG",  music: "/music/bgm/morning/morning2.mp3" },
     { text: "“Good morning, Aya! I left early for work, and I won’t come back until midnight. You don’t have to wait for me. There’s food left from last night, don’t let it go to waste! Love, Mom.”", nextIndex: 6 },
     { text: "Another sticky note was beside it. It reads:", nextIndex: 7 },
     { text: "“Also, remember to turn the AC off - you always forget it!”", nextIndex: 8 },
