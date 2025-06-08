@@ -3,8 +3,14 @@
 
 import React from "react";
 import StoryPart from "@/components/ui/StoryPart";
+import { saveChoice, EcoChoice } from "@/utils/saveChoice";
+import { useState, useEffect } from "react";
 
 export default function Page1() {
+  const handleChoice = (choice: EcoChoice) => {
+    console.log("Choice clicked:", choice);
+    saveChoice(choice);
+  };
   return (
     <div>
       <StoryPart
@@ -23,9 +29,9 @@ export default function Page1() {
     {
       text: "Choose an action:",
       choices: [
-        { text: "Yes.", nextIndex: 10, setState: { acOff: false } },
-        { text: "Doesn't matter", nextIndex: 11, setState: { acOff: true } },
-        { text: "No.", nextIndex: 12, setState: { acOff: true } },
+        { text: "Yes.", nextIndex: 10, setState: { acOff: false }, onClick: () => handleChoice({ id: "turn-off-ac", water: 0, carbon: 10, waste: 0 }) },
+        { text: "Doesn't matter", nextIndex: 11, setState: { acOff: true }, onClick: () => handleChoice({ id: "meh-ac", water: 0, carbon: 1, waste: 0 })},
+        { text: "No.", nextIndex: 12, setState: { acOff: true }, onClick: () => handleChoice({ id: "turn-on-ac", water: 0, carbon: 0, waste: 0 }) },
       ],
     },
     { text: "You turn off the AC and go to the kitchen after closing the door.", nextIndex: 13, background: "/images/Day1/BedroomOpen.PNG" },
@@ -40,9 +46,9 @@ export default function Page1() {
     {
       text: "Choose your meal:",
       choices: [
-        { text: "Leftovers from last night.", nextIndex: 20, setState: { eatOuside: false } },
-        { text: "Canned food.", nextIndex: 22, setState: { eatOuside: false } },
-        { text: "Buy from the carinderia outside.", nextIndex: 24, setState: { eatOuside: true } },
+        { text: "Leftovers from last night.", nextIndex: 20, setState: { eatOuside: false }, onClick: () => handleChoice({ id: "leftovers", water: 0, carbon: 0, waste: 10 }) },
+        { text: "Canned food.", nextIndex: 22, setState: { eatOuside: false }, onClick: () => handleChoice({ id: "canned-food", water: 0, carbon: 0, waste: 2 }) },
+        { text: "Buy from the carinderia outside.", nextIndex: 24, setState: { eatOuside: true }, onClick: () => handleChoice({ id: "carinderia", water: 0, carbon: 0, waste: 5 }) },
       ],
     },
     { text: "Keeping in mind your mother’s reminders, you eat the leftovers from last night.", nextIndex: 21 },
@@ -62,8 +68,8 @@ export default function Page1() {
       text: "Do you want to flip the switch?",
       condition: (flags) => flags.acOff === true,
       choices: [
-        { text: "Yes.", nextIndex: 34},
-        { text: "No", nextIndex: 35 },
+        { text: "Yes.", nextIndex: 34, onClick: () => handleChoice({ id: "yes", water: 0, carbon: 10, waste: 10 })},
+        { text: "No", nextIndex: 35, onClick: () => handleChoice({ id: "no", water: 0, carbon: 0, waste: 0 }) },
       ],
     },
     { text: "You go near the door, and realize the reason why you left it open. You now turn off the AC and leave your home.", condition: (flags) => flags.acOff === true, nextIndex: 36 },
@@ -478,42 +484,42 @@ export default function Page1() {
     {
       text: "1. Which habit helps reduce electricity use at home?",
       choices: [
-        { text: "A. Leaving lights on for safety", nextIndex: 124, setState: { Q1: false } },
-        { text: "B. Turning the TV volume low", nextIndex: 124, setState: { Q1: false }  },
-        { text: "C. Using appliances only when needed", nextIndex: 124, setState: { Q1: true }   }
+        { text: "A. Leaving lights on for safety", nextIndex: 124, setState: { Q1: false }, onClick: () => handleChoice({ id: "leaving-lights", water: 0, carbon: -10, waste: 0 }) },
+        { text: "B. Turning the TV volume low", nextIndex: 124, setState: { Q1: false }, onClick: () => handleChoice({ id: "volume-low", water: 0, carbon: 0, waste: 0 })},
+        { text: "C. Using appliances only when needed", nextIndex: 124, setState: { Q1: true }, onClick: () => handleChoice({ id: "on-when-neededs", water: 0, carbon: 10, waste: 0}) }
         
       ]
     },
     {
       text: "2. What is a simple way to save energy during the daytime?",
       choices: [
-        { text: "A. Turning on more lights", nextIndex: 125, setState: { Q2: false } },
-        { text: "B. Opening windows and using natural light", nextIndex: 125,setState: { Q2: true } },
-        { text: "C. Using a lamp even when it's bright", nextIndex: 125, setState: { Q2: false } }
+        { text: "A. Turning on more lights", nextIndex: 125, setState: { Q2: false }, onClick: () => handleChoice({ id: "on-more-lights", water: 0, carbon: -10, waste: 0}) },
+        { text: "B. Opening windows and using natural light", nextIndex: 125,setState: { Q2: true }, onClick: () => handleChoice({ id: "natural-light", water: 0, carbon: 10, waste: 0}) },
+        { text: "C. Using a lamp even when it's bright", nextIndex: 125, setState: { Q2: false }, onClick: () => handleChoice({ id: "lamp", water: 0, carbon: -10, waste: 0}) }
       ]
     },
     {
       text: "3. What is phantom power (also known as standby power)?",
       choices: [
-        { text: "A. Power used by ghosts in the grid", nextIndex: 126, setState: { Q3: false } },
-        { text: "B. Energy lost from unplugged devices", nextIndex: 126, setState: { Q3: true } },
-        { text: "C. Energy consumed by electronics plugged in but not in use", nextIndex: 126, setState: { Q3: false } }
+        { text: "A. Power used by ghosts in the grid", nextIndex: 126, setState: { Q3: false }, onClick: () => handleChoice({ id: "ghosts", water: 0, carbon: -5, waste: 0})},
+        { text: "B. Energy lost from unplugged devices", nextIndex: 126, setState: { Q3: true }, onClick: () => handleChoice({ id: "energy-lost", water: 0, carbon: -5, waste: 0}) },
+        { text: "C. Energy consumed by electronics plugged in but not in use", nextIndex: 126, setState: { Q3: false }, onClick: () => handleChoice({ id: "consumed-energy", water: 0, carbon: 10, waste: 5}) }
       ]
     },
     {
       text: "4. Which device generally consumes the most electricity when left running for hours?",
       choices: [
-        { text: "A. Air conditioner", nextIndex: 127, setState: { Q4: true } },
-        { text: "B. Laptop", nextIndex: 127, setState: { Q4: false } },   
-        { text: "C. Radio", nextIndex: 127, setState: { Q4: false } }
+        { text: "A. Air conditioner", nextIndex: 127, setState: { Q4: true }, onClick: () => handleChoice({ id: "air-conditioner", water: 0, carbon: 10, waste: 0}) },
+        { text: "B. Laptop", nextIndex: 127, setState: { Q4: false }, onClick: () => handleChoice({ id: "laptop", water: 0, carbon: 5, waste: 0}) },   
+        { text: "C. Radio", nextIndex: 127, setState: { Q4: false }, onClick: () => handleChoice({ id: "radio", water: 0, carbon: 3, waste: 0}) }
       ]
     },
     {
       text: "5. Why should you unplug your charger when not in use?",
       choices: [
-        { text: "A. It makes your phone charge faster later", nextIndex: 128, setState: { Q5: false } },
-        { text: "B. It saves energy and avoids phantom power", nextIndex: 128, setState: { Q5: true } },
-        { text: "C. It helps the wall socket rest", nextIndex: 128, setState: { Q5: false } }
+        { text: "A. It makes your phone charge faster later", nextIndex: 128, setState: { Q5: false }, onClick: () => handleChoice({ id: "phone-charge", water: 0, carbon: -5, waste: 0}) },
+        { text: "B. It saves energy and avoids phantom power", nextIndex: 128, setState: { Q5: true }, onClick: () => handleChoice({ id: "avoid-phantom", water: 0, carbon: 10, waste: 0}) },
+        { text: "C. It helps the wall socket rest", nextIndex: 128, setState: { Q5: false }, onClick: () => handleChoice({ id: "socket-rest", water: 0, carbon: -3, waste: 0}) }
       ]
     },
     {
@@ -824,6 +830,8 @@ export default function Page1() {
      
   ]}
 />  
+
+
     </div>
   );
 }

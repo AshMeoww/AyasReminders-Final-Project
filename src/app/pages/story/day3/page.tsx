@@ -3,8 +3,13 @@
 
 import React from "react";
 import StoryPart from "@/components/ui/StoryPart";
+import { saveChoice, EcoChoice } from "@/utils/saveChoice";
 
 export default function Page1() {
+  const handleChoice = (choice: EcoChoice) => {
+    console.log("Choice clicked:", choice);
+    saveChoice(choice);
+  };
   return (
     <div>
       <StoryPart

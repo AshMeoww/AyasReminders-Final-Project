@@ -2,8 +2,13 @@
 
 import React from "react";
 import StoryPart from "@/components/ui/StoryPart";
+import { saveChoice, EcoChoice } from "@/utils/saveChoice";
 
 export default function Page2() {
+  const handleChoice = (choice: EcoChoice) => {
+    console.log("Choice clicked:", choice);
+    saveChoice(choice);
+  };
   return (
     <div>
       <StoryPart
@@ -48,9 +53,9 @@ export default function Page2() {
           {
             text: "Will you keep drinking?",
             choices: [
-              { text: "Yes", nextIndex: 14, setState: { leftGlass : false } },
-              { text: "Later", nextIndex: 15, setState: { leftGlass : true } },
-              { text: "No", nextIndex: 16, setState: { leftGlass : false } },
+              { text: "Yes", nextIndex: 14, setState: { leftGlass : false }, onClick: () => handleChoice({ id: "keep-drinking", water: 10, carbon: 0, waste: 0}) }, 
+              { text: "Later", nextIndex: 15, setState: { leftGlass : true }, onClick: () => handleChoice({ id: "keep-drinking-later", water: -5, carbon: 0, waste: 0}) },
+              { text: "No", nextIndex: 16, setState: { leftGlass : false }, onClick: () => handleChoice({ id: "keep-drinking-no", water: -10, carbon: 0, waste: 0}) },
             ],
           },
           { text: "Your tummy feels weird - you can feel the water.", nextIndex: 18 }, // after Yes

@@ -3,11 +3,41 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useStoryProgress } from "@/components/context/storyContext";
-
+import { getEcoChoices } from "@/utils/saveChoice";
+import { useEffect, useState } from "react";
 
 function EcoCard() {
-  const router = useRouter(); 
-  const { day } = useStoryProgress();
+  const [water, setWater] = useState(0);
+  const [carbon, setCarbon] = useState(0);
+  const [waste, setWaste] = useState(0);
+  const [ecoScore, setEcoScore] = useState(0);
+
+  useEffect(() => {
+    const choices = getEcoChoices();
+  
+    let totalWater = 0;
+    let totalCarbon = 0;
+    let totalWaste = 0;
+  
+    for (const c of choices) {
+      totalWater += Number(c.water || 0);
+      totalCarbon += Number(c.carbon || 0);
+      totalWaste += Number(c.waste || 0);
+    }
+  
+    setWater(totalWater);
+    setCarbon(totalCarbon);
+    setWaste(totalWaste);
+    setEcoScore(totalWater + totalCarbon + totalWaste);
+  }, []);
+  
+  // This effect runs once to calculate the totals from saved choices
+
+  
+
+const router = useRouter(); 
+const { day } = useStoryProgress();
+
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-start bg-forest bg-center pb-20">
       <h1 className="text-6xl font-bold text-black font-pixelify mt-36">
@@ -46,13 +76,13 @@ function EcoCard() {
                 YOUR IMPACT SUMMARY
               </h1>
               <p className="transition-transform duration-300 group-hover:scale-110 font-pixelify font-medium text-xl text-left">
-                Water Saved:
+                Water Saved: {water}
               </p>
               <p className="transition-transform duration-300 group-hover:scale-110 font-pixelify font-medium text-xl text-left">
-                Carbon Reduced:
+                Carbon Reduced: {carbon}
               </p>
               <p className="transition-transform duration-300 group-hover:scale-110 font-pixelify font-medium text-xl text-left">
-                Waste Avoided:
+                Waste Avoided: {waste}
               </p>
               <h1 className="transition-transform duration-300 group-hover:scale-110 font-pixelify font-bold text-3xl text-center">
                 "What haffen vella?"
@@ -72,7 +102,7 @@ function EcoCard() {
                 YOUR ECO SCORE
               </h1>
               <p className="transition-transform duration-300 group-hover:scale-110 font-pixelify font-medium text-5xl text-center">
-                90
+                {ecoScore}
               </p>
               </div>
             </div>
@@ -109,3 +139,19 @@ function EcoCard() {
 }
 
 export default EcoCard;
+function setWater(totalWater: number) {
+  throw new Error("Function not implemented.");
+}
+
+function setCarbon(totalCarbon: number) {
+  throw new Error("Function not implemented.");
+}
+
+function setWaste(totalWaste: number) {
+  throw new Error("Function not implemented.");
+}
+
+function setEcoScore(arg0: number) {
+  throw new Error("Function not implemented.");
+}
+
