@@ -38,15 +38,15 @@ function MeetCast() {
                     className="flex items-center justify-between p-8 bg-white"
                 >
                     <div className="flex flex-col gap-2">
-                        <h3 className="text-4xl font-semibold text-[#0B008A] font-pixelify w-2xs">
+                        <h3 className="text-4xl font-semibold text-[#108eb0] font-pixelify w-2xs">
                             Aya's Mother
                         </h3>
                         <p className="text-[#32374F] mt-4 font-figtree font-extralight text-left w-lg">
-                            Ashley Nicole D. Santos is the team’s project manager. She is the one responsible for the overall progress of the team, and also the coding of the website.
+                        A caring mother who loves to leave notes as reminders.
                         </p>
                     </div>
                     <Image
-                        src="/images/sproutie_carbon.png"
+                        src="/images/Characters/AyasMother-game.PNG"
                         alt="Aya's Mother"
                         width={200}
                         height={200}
@@ -60,15 +60,15 @@ function MeetCast() {
                     className="flex items-center justify-between p-8 bg-white"
                 >
                     <div className="flex flex-col gap-2">
-                        <h3 className="text-4xl font-semibold text-[#0B008A] font-pixelify w-2xs">
+                        <h3 className="text-4xl font-semibold text-[#88008a] font-pixelify w-2xs">
                             Eireen
                         </h3>
                         <p className="text-[#32374F] mt-4 font-figtree font-extralight text-left w-lg">
-                            Aya's friend is a cheerful companion who helps her navigate the challenges of the story.
+                        Aya’s best friend since childhood who brings out Aya’s inner feelings.
                         </p>
                     </div>
                     <Image
-                        src="/images/sproutie_waste.png"
+                        src="/images/Characters/Eireen-game.PNG"
                         alt="Aya's Friend"
                         width={200}
                         height={200}
@@ -82,15 +82,15 @@ function MeetCast() {
                     className="flex items-center justify-between p-8 bg-white"
                 >
                     <div className="flex flex-col gap-2">
-                        <h3 className="text-4xl font-semibold text-[#0B008A] font-pixelify w-2xs">
+                        <h3 className="text-4xl font-semibold text-[#5e2f0e] font-pixelify w-2xs">
                             Ray
                         </h3>
                         <p className="text-[#32374F] mt-4 font-figtree font-extralight text-left w-lg">
-                            Aya's mentor provides guidance and wisdom to help her overcome obstacles.
+                        The big brother of the group. He is calm and collected with a witty sense of humor.
                         </p>
                     </div>
                     <Image
-                        src="/images/sproutie_carbon.png"
+                        src="/images/Characters/Ray-game.PNG"
                         alt="Aya's Mentor"
                         width={200}
                         height={200}
@@ -105,14 +105,14 @@ function MeetCast() {
                 >
                     <div className="flex flex-col gap-2">
                         <h3 className="text-4xl font-semibold text-[#8A0000] font-pixelify w-2xs">
-                            Lourie
+                            Laurie
                         </h3>
                         <p className="text-[#32374F] mt-4 font-figtree font-extralight text-left w-lg">
-                            A mysterious antagonist who challenges Aya at every turn.
+                        The group’s sarcastic, perpetually tired, and brutally honest friend.
                         </p>
                     </div>
                     <Image
-                        src="/images/sproutie_waste.png"
+                        src="/images/Characters/Laurie-game.PNG"
                         alt="The Villain"
                         width={200}
                         height={200}
@@ -130,11 +130,11 @@ function MeetCast() {
                             Fransette
                         </h3>
                         <p className="text-[#32374F] mt-4 font-figtree font-extralight text-left w-lg">
-                            A loyal companion who supports Aya in her journey.
+                        A silly student that brings the group embarrassment all the time.
                         </p>
                     </div>
                     <Image
-                        src="/images/sproutie_carbon.png"
+                        src="/images/Characters/Fransette-game.PNG"
                         alt="The Sidekick"
                         width={200}
                         height={200}
@@ -149,14 +149,14 @@ function MeetCast() {
                 >
                     <div className="flex flex-col gap-2">
                         <h3 className="text-4xl font-semibold text-[#4A008A] font-pixelify w-2xs">
-                            The Guardian
+                            Sir Waffles
                         </h3>
                         <p className="text-[#32374F] mt-4 font-figtree font-extralight text-left w-lg">
-                            A protector who ensures Aya's safety during her adventures.
+                        Aya and the others’ teacher. His name is actually Waffles.
                         </p>
                     </div>
                     <Image
-                        src="/images/sproutie_waste.png"
+                        src="/images/Characters/Waffles-game.PNG"
                         alt="The Guardian"
                         width={200}
                         height={200}
@@ -171,14 +171,14 @@ function MeetCast() {
                 >
                     <div className="flex flex-col gap-2">
                         <h3 className="text-4xl font-semibold text-[#8A8A00] font-pixelify w-2xs">
-                            The Mystic
+                        Ma’am Austline
                         </h3>
                         <p className="text-[#32374F] mt-4 font-figtree font-extralight text-left w-lg">
-                            A wise character who provides Aya with magical insights.
+                        Another teacher who is close to Sir Waffles. Scary, intimidating, but that was only during the first meeting.
                         </p>
                     </div>
                     <Image
-                        src="/images/sproutie_carbon.png"
+                        src="/images/Characters/Austline-game.PNG"
                         alt="The Mystic"
                         width={200}
                         height={200}
@@ -186,27 +186,6 @@ function MeetCast() {
                     />
                 </div>
 
-                {/* Card 9 */}
-                <div
-                    id="rival"
-                    className="flex items-center justify-between p-8 bg-white"
-                >
-                    <div className="flex flex-col gap-2">
-                        <h3 className="text-4xl font-semibold text-[#8A4A00] font-pixelify w-2xs">
-                            The Rival
-                        </h3>
-                        <p className="text-[#32374F] mt-4 font-figtree font-extralight text-left w-lg">
-                            A competitive character who pushes Aya to her limits.
-                        </p>
-                    </div>
-                    <Image
-                        src="/images/sproutie_waste.png"
-                        alt="The Rival"
-                        width={200}
-                        height={200}
-                        className="mr-28"
-                    />
-                </div>
             </div>
         </div>
     );

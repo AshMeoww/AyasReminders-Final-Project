@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { IoIosArrowDown } from "react-icons/io";
 
 function AyaDropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,13 +30,11 @@ function AyaDropdown() {
                 <span className="font-pixelify text-[#1AB261]">Aya</span>
               </>
             )}
-            <span
+            <IoIosArrowDown
               className={`ml-2 transform transition-transform ${
                 isOpen ? "rotate-180" : "rotate-0"
               }`}
-            >
-              ▼
-            </span>
+            />
           </button>
           {!isOpen && (
             <p className="text-gray-600 leading-relaxed font-light mb-4">

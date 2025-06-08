@@ -31,18 +31,17 @@ function Navbar() {
           Home
         </Link>
 
-        <div className="relative">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-gray-600 hover:text-gray-900"
-          >
-            About
-          </button>
+        <div
+          className="relative"
+          onMouseEnter={() => setIsOpen(true)}
+          onMouseLeave={() => setIsOpen(false)}
+        >
+          <button className="text-gray-600 hover:text-gray-900">About</button>
 
           <div
             className={`absolute ${
-              isOpen ? "block" : "hidden"
-            } w-48 bg-white shadow-lg rounded-md mt-2 z-10`}
+              isOpen ? "block pointer-events-auto" : "hidden pointer-events-none"
+            } w-48 bg-white shadow-lg rounded-md z-10`}
           >
             <Link
               href="/pages/about-the-game"
@@ -70,7 +69,7 @@ function Navbar() {
       </div>
 
       <button 
-        onClick={() => handleNavigation("/pages/get-started")}
+        onClick={() => handleNavigation("/pages/get-started/Ecocard")}
         className="px-6 py-2 text-white bg-green-500 rounded-4xl hover:bg-green-600 mr-4"
       >
         Get Started

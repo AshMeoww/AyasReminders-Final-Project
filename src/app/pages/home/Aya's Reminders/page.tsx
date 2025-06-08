@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { IoIosArrowDown } from "react-icons/io";
 
 function AyaReminders() {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,18 +30,24 @@ function AyaReminders() {
                         Aya’s Reminders is a story-driven game where every choice shapes the
                         world around you.
                     </p>
-                    <button
-                        onClick={toggleDropdown}
-                        className="mt-4 text-black focus:outline-none transform transition-transform"
-                    >
-                        <span
-                            className={`text-4xl inline-block transform transition-transform duration-300 ${
-                                isOpen ? "rotate-180" : "rotate-0"
-                            }`}
+                    <div className="flex items-center mt-6">
+                        <button
+                            onClick={toggleDropdown}
+                            className="mr-4 text-black focus:outline-none transform transition-transform"
                         >
-                            ▲
-                        </span>
-                    </button>
+                            <IoIosArrowDown
+                                className={`text-6xl transform transition-transform duration-300 ${
+                                    isOpen ? "rotate-180" : "rotate-0"
+                                }`}
+                            />
+                        </button>
+                        <button
+                            onClick={handlePlayGame}
+                            className="px-6 py-3 bg-[#1AB261] text-white font-bold rounded-r-3xl shadow-md hover:bg-green-600 transition-colors"
+                        >
+                            Play Game
+                        </button>
+                    </div>
                     {isOpen && (
                         <div className="text-gray-800 leading-relaxed font-extralight font-figtree text-left mt-4">
                             Guided by gentle notes left by her mother, Aya navigates everyday
@@ -50,12 +57,6 @@ function AyaReminders() {
                             us—and the world we share.
                         </div>
                     )}
-                    <button
-                        onClick={handlePlayGame}
-                        className="mt-6 px-6 py-3 bg-[#1AB261] text-white font-bold rounded-r-3xl shadow-md hover:bg-green-600 transition-colors"
-                    >
-                        Play Game
-                    </button>
                 </div>
                 <div className="ml-8 flex-shrink-0">
                     <Image

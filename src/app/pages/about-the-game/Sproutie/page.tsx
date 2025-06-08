@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { IoIosArrowDown } from "react-icons/io";
 
 function SproutieDropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,13 +43,11 @@ function SproutieDropdown() {
                   </span>
                 </>
               )}
-              <span
+              <IoIosArrowDown
                 className={`ml-2 transform transition-transform ${
                   isOpen ? "rotate-180" : "rotate-0"
                 }`}
-              >
-                ▼
-              </span>
+              />
             </button>
           </div>
           {!isOpen && (
