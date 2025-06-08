@@ -12,13 +12,13 @@ export default function GameHome() {
   return (
     <div className="min-h-screen bg-white relative flex flex-col items-center justify-center px-6 py-8 sm:px-12">
 
-      <div className="absolute top-0 right-0 h-[90vh] w-auto overflow-hidden z-0">
+      <div className="absolute bottom-0 right-0 h-auto w-auto overflow-hidden z-0">
         <Image
-          src="/images/aya.png"
+          src="/images/aya-home.png"
           alt="Aya Character"
           width={800}
           height={100}
-          className="object-cover h-full"
+          className="object-cover"
         />
       </div>
 

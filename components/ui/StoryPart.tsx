@@ -409,7 +409,7 @@ const handleClick = () => {
       {/* Exit Button */}Add commentMore actions
       <div className="absolute top-4 left-4">
         <button
-          onClick={() => router.push("/")}
+          onClick={() => router.push("/pages/story/home")}
           className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded border-4 border-black pixelated"
         >
           Exit Game
