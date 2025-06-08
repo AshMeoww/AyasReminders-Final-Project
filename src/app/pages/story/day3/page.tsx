@@ -13,19 +13,19 @@ export default function Page1() {
   return (
     <div>
       <StoryPart
-  background="/images/classroom.png"
+        background="/images/white.jpg"
   onEndRedirect="/pages/story/day4"
   dialogues={[
-    {text: "A brand new day, but same old routine.", nextIndex: 1},
-    {text: "A brand new day, but same old routine.", nextIndex: 2},
+    {text: "Day 3: Before you throw it, ask: Can it go again?", nextIndex: 1},
+    {text: "A brand new day, but same old routine.", nextIndex: 2, background: "/images/Day3/Bedroom-day3.PNG"},
     {text: "You wake up feeling a little groggy,", nextIndex: 3},
     {text: "But just like any other day, your mother is gone and a sticky note greets you.", nextIndex: 4},
     {text: "It reads: “Good morning Aya, it’s time to start your day again! Everything still has use, don’t let it go to waste. <3”", nextIndex: 5},
-    {text: "And so, you get up from your bed and go to the kitchen to eat some breakfast.", nextIndex: 6},
+    {text: "And so, you get up from your bed and go to the kitchen to eat some breakfast.", nextIndex: 6,  background: "/images/Day3/Kitchen-day3.PNG"},
     {text: "Ate the leftovers, carefully wash the plates, and take a bath.", nextIndex: 7},
-    {text: "Then get dressed in your school uniform, make sure unused appliances are unplugged, and walk to the bus stop.", nextIndex: 8},
+    {text: "Then get dressed in your school uniform, make sure unused appliances are unplugged, and walk to the bus stop.", nextIndex: 8, background: "/images/Day2/Prepare-unif.PNG"},
     {text: "Same old routine, can you even keep this up?", nextIndex: 9},
-    {text: "The bus arrives.", nextIndex: 10},
+    {text: "The bus arrives.", nextIndex: 10, background: "/images/Day3/InsideBus-day3.PNG"},
     {text: "You board it and wait for it to arrive at your school.", nextIndex: 11},
     {
       character: "/images/Characters/Silhouette-game.PNG",
@@ -42,7 +42,7 @@ export default function Page1() {
     {text: "You didn’t notice you fell asleep.", nextIndex: 14},
     {text: "Thankfully, Laurie woke you up.", nextIndex: 15},
     {text: "The two of you get off the bus, and make your way to your classroom, again.", nextIndex: 16},
-    {text: "What new will the class bring today?", nextIndex: 17},
+    {text: "What new will the class bring today?", nextIndex: 17, background: "/images/Day3/Classroom-day3.PNG"},
     {
       character: "/images/Characters/Waffles-game.PNG",
       name: "Sir Waffles",
@@ -97,6 +97,7 @@ export default function Page1() {
       name: "Sir Waffles",
       text: "I brought with me materials you all can use, just don’t hoard them all okay?",
       nextIndex: 27
+      , background: "/images/Day3/Cd_newspaper-day3.PNG"
     },
     {
       character: "/images/Characters/Waffles-game.PNG",
@@ -179,6 +180,7 @@ export default function Page1() {
       name: "Fransette",
       text: "Wow. What a masterpiece.",
       nextIndex: 43,
+      background: "/images/Day3/Classroom-day3.PNG"
     },
     {
       character: "/images/Characters/Eireen-game.PNG",
@@ -187,7 +189,7 @@ export default function Page1() {
       nextIndex: 44,
     },
     {
-      character: "/images/Characters/Sir Waffles-game.PNG",
+      character: "/images/Characters/Waffles-game.PNG",
       name: "Sir Waffles",
       text: "Is everyone done?",
       nextIndex: 45,
@@ -199,25 +201,25 @@ export default function Page1() {
       nextIndex: 46,
     },
     {
-      character: "/images/Characters/Sir Waffles-game.PNG",
+      character: "/images/Characters/Waffles-game.PNG",
       name: "Sir Waffles",
       text: "Alright, take your seats with your groupmates and…",
       nextIndex: 47,
     },
     {
-      character: "/images/Characters/Sir Waffles-game.PNG",
+      character: "/images/Characters/Waffles-game.PNG",
       name: "Sir Waffles",
       text: "We’ll start from the back.",
       nextIndex: 48,
     },
     {
-      character: "/images/Characters/Student-game.PNG",
+      character: "/images/Characters/Silhouette-game.PNG",
       name: "Student",
       text: "Aw dang it!",
       nextIndex: 49,
     },
     {
-      character: "/images/Characters/Everyone-game.PNG",
+      character: "/images/Characters/Silhouette-game.PNG",
       name: "Everyone",
       text: "Hahahahaha..",
       nextIndex: 50,
@@ -295,6 +297,7 @@ export default function Page1() {
       name: "Eireen",
       text: "Hey, our group killed it earlier!",
       nextIndex: 65,
+      background: "/images/Day3/RoadSunset-day3.PNG"
     },
     {
       character: "/images/Characters/Eireen-game.PNG",
@@ -381,10 +384,12 @@ export default function Page1() {
     {
       text: "Your home is welcoming you once again, ready to look over you.",
       nextIndex: 81,
+      background: "/images/Day3/HomeSunset-day3.PNG"
     },
     {
       text: "Inside, a couple of okay-looking paper bags are left on the kitchen counter.",
       nextIndex: 82,
+      background: "/images/Day3/Paperbag-day3.PNG"
     },
     {
       text: "What will you do?",
@@ -418,6 +423,7 @@ export default function Page1() {
     {
       text: "You place your bag down and sit.",
       nextIndex: 88,
+      background: "/images/Day3/schoolBag-day3.PNG"
     },
     {
       text: "It feels heavier than usual — you wonder why.",
@@ -465,7 +471,8 @@ export default function Page1() {
       nextIndex: 96,
     },
     {
-      text: "Old test paper. A quiz paper from weeks ago, full of doodles and red marks.",
+      text: "Old test paper. A quiz paper from weeks ago, full of doodles and red marks."
+      , background: "/images/Day3/OldtestPaper-day3.PNG",
       choices: [
         {
           text: "Use the back as scratch paper.",
@@ -497,6 +504,7 @@ export default function Page1() {
           nextIndex: 98,
         },
       ],
+      background: "/images/Day3/Pen-day3.PNG"
     },
     {
       text: "A candy wrapper. Tiny. Almost nothing.",
@@ -514,10 +522,12 @@ export default function Page1() {
           nextIndex: 99,
         },
       ],
+      background: "/images/Day3/CandyWrapper-day3.PNG"
     },
     {
       text: "The last thing you find is a pressed flower.",
       nextIndex: 100,
+      background: "/images/Day3/PressedFlower-day3.PNG"
     },
     {
       text: "From when...?",
@@ -570,6 +580,7 @@ export default function Page1() {
     {
       text: "You empty the whole bag into the trash bin.",
       nextIndex: 112,
+      background: "/images/Day3/TrashCan-day3.PNG"
     },
     {
       text: "Quick. Clean. Done.",
@@ -587,12 +598,10 @@ export default function Page1() {
       text: "Was that pen still working? Too late now.",
       nextIndex: 116,
     },
-
-
-
     {
       text: "Now you’ve taken care of that, you finally eat and prepare for sleep.",
       nextIndex: 117,
+      background: "/images/Day2/Bedroom-night.PNG"
     },
     {
       text: "Just like yesterday.",

@@ -8,6 +8,8 @@ import { useEco } from "@/components/context/ecoPointContext";
 import { useStoryProgress } from "@/components/context/storyContext";
 import { useStoryFlags } from "@/components/context/storyFlags";
 import { resetEcoChoices } from "@/utils/saveChoice";
+import secondaryBg from "@/public/images/GameBG-colored.png";
+
 
 type Dialogue = {
   character?: string;
@@ -174,23 +176,22 @@ export default function StoryPart({
     }
   }, [background]);
 
-  // Handle clicking to progress dialogue
-  const handleClick = () => {
-    if (displayedLength < currentDialogue.text.length) {
-      cancelTypingRef.current = true;
-    } else if (currentDialogue.choices?.length) {
-      return; // wait for user to select choice
-    } else if (currentDialogue.nextIndex !== undefined) {
-      setDialogueIndex(currentDialogue.nextIndex);
-    } else {
-      console.log("End of dialogue");
-      if (onEndRedirect) {
-        setDay(day + 1);
-        router.push(onEndRedirect);
-        resetIndex();
-      }
+// Handle clicking to progress dialogue
+const handleClick = () => {
+  if (displayedLength < currentDialogue.text.length) {
+    cancelTypingRef.current = true;
+  } else if (currentDialogue.choices?.length) {
+    return;
+  } else if (currentDialogue.nextIndex !== undefined) {
+    setDialogueIndex(currentDialogue.nextIndex);
+  } else {
+    if (onEndRedirect) {
+      setDay(day + 1);
+      router.push(onEndRedirect);
+      resetIndex();
     }
-  };
+  }
+};
 
   const handleChoiceClick = (
     nextIndex: number,
@@ -235,7 +236,9 @@ export default function StoryPart({
           resetEcoChoices(); // Reset eco choices
           window.dispatchEvent(new Event("ecoReset")); // custom event
           resetDialogue();
+          setDialogueHistory([]);
           playSfx1();
+          router.push(`/pages/story/day${day}`)
         }}
         onMouseEnter={() => playSfx2()}
       >
@@ -313,6 +316,14 @@ export default function StoryPart({
       )}
       {/* Background Image */}
       <div className="fixed top-0 left-0 w-full h-screen bg-gray-400 z-0">
+      <div className="absolute top-0 left-0 w-full h-full z-[-1]">
+        <Image
+          src={secondaryBg}
+          alt="Secondary Background"
+          fill
+          className="object-cover"
+        />
+      </div>
         <div className="relative w-[80vw] h-full mx-auto">
           {/* Image with fade */}
           <div

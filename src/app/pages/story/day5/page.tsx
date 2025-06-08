@@ -199,20 +199,20 @@ export default function Page5() {
       nextIndex: 47
     },
     {
-      name: "Ma’am Austline",
-      character: "/images/Characters/Ma’amAustline-game.PNG",
+      name: "Ms. Austline",
+      character: "/images/Characters/Austline-game.PNG",
       text: "Thank you, Fransette. That’s honest.",
       nextIndex: 48
     },
     {
-      name: "Ma’am Austline",
-      character: "/images/Characters/Ma’amAustline-game.PNG",
+      name: "Ms. Austline",
+      character: "/images/Characters/Austline-game.PNG",
       text: "Sometimes we know better, but it’s not always easy.",
       nextIndex: 49
     },
     {
-      name: "Ma’am Austline",
-      character: "/images/Characters/Ma’amAustline-game.PNG",
+      name: "Ms. Austline",
+      character: "/images/Characters/Austline-game.PNG",
       text: "What matters is that we start noticing.",
       nextIndex: 50
     },
@@ -221,8 +221,8 @@ export default function Page5() {
       nextIndex: 51
     },
     {
-      name: "Ma’am Austline",
-      character: "/images/Characters/Ma’amAustline-game.PNG",
+      name: "Ms. Austline",
+      character: "/images/Characters/Austline-game.PNG",
       text: "We move through the world every day—but how often do we stop to ask how?",
       nextIndex: 52
     },
@@ -235,20 +235,20 @@ export default function Page5() {
       nextIndex: 54
     },
     {
-      name: "Ma’am Austline",
-      character: "/images/Characters/Ma’amAustline-game.PNG",
+      name: "Ms. Austline",
+      character: "/images/Characters/Austline-game.PNG",
       text: "While you eat, think about this—",
       nextIndex: 55
     },
     {
-      name: "Ma’am Austline",
-      character: "/images/Characters/Ma’amAustline-game.PNG",
+      name: "Ms. Austline",
+      character: "/images/Characters/Austline-game.PNG",
       text: "How far did your lunch travel?",
       nextIndex: 56
     },
     {
-      name: "Ma’am Austline",
-      character: "/images/Characters/Ma’amAustline-game.PNG",
+      name: "Ms. Austline",
+      character: "/images/Characters/Austline-game.PNG",
       text: "And when you travel this weekend, could you do it differently?",
       nextIndex: 57
     },
@@ -256,7 +256,8 @@ export default function Page5() {
 
     {
       text: "At lunch, the conversation shifts from carbon footprints to weekend plans.",
-      nextIndex: 58
+      nextIndex: 58,
+      background: "/images/Day4/Soda_garbageCan-day4.PNG"
     },
     {
       name: "Eireen",
@@ -400,7 +401,8 @@ export default function Page5() {
     {
       condition: (flags) => flags.takeBike === true,
       text: "The two of you approach the bike, appreciating its beauty and remembering the past.",
-      nextIndex: 83
+      nextIndex: 83,
+      background: "/images/Day5/Garage-bike-day5.PNG"
     },
     {
       condition: (flags) => flags.takeBike === true,
@@ -431,8 +433,10 @@ export default function Page5() {
     {
       condition: (flags) => flags.takeBike === true,
       name: "Aya",
+      character: "/images/Characters/Aya-game.PNG",
       text: "See you tomorrow.",
-      nextIndex: 88
+      nextIndex: 88,
+      background: "/images/Day3/RoadSunset-day3.PNG"
     },
     {
       condition: (flags) => flags.takeBike === true,
@@ -449,7 +453,8 @@ export default function Page5() {
     {
       condition: (flags) => flags.takeBike === true,
       text: "You get home, drop your bag by the door, and head to the kitchen.",
-      nextIndex: 91
+      nextIndex: 91,
+      background: "/images/Day3/HomeSunset-day3.PNG"
     },
     {
       condition: (flags) => flags.takeBike === true,
@@ -474,7 +479,8 @@ export default function Page5() {
     {
       condition: (flags) => flags.takeBike === true,
       text: "Your eyes land on the bike helmet sitting on the desk.",
-      nextIndex: 96
+      nextIndex: 96,
+      background: "/images/Day5/Helmet-day5.PNG"
     },
     {
       condition: (flags) => flags.takeBike === true,
@@ -515,7 +521,9 @@ export default function Page5() {
     {
       condition: (flags) => flags.takeBike === true,
       text: "Then lie back on the bed.",
-      nextIndex: 104
+      nextIndex: 104,
+      background: "/images/Day5/BedroomNight-day5.PNG"
+
     },
     {
       condition: (flags) => flags.takeBike === true,
@@ -525,13 +533,15 @@ export default function Page5() {
     {
       condition: (flags) => flags.takeBike === true,
       text: "You hope it’ll be fun.",
-      nextIndex: 106
+      nextIndex: 134
     },
     
     
     {
       text: "The two of you wait at the bus stop, and chat about tomorrow.",
-      nextIndex: 107
+      nextIndex: 107,
+      background: "/images/Day5/Busstop-sunset-day5.PNG"
+
     },
     {
       name: "Eireen",
@@ -567,7 +577,8 @@ export default function Page5() {
     },
     {
       text: "You both board the bus, and patiently wait to arrive at your homes.",
-      nextIndex: 114
+      nextIndex: 114,
+      background: "/images/Day5/InsideBus-day5.PNG"
     },
     {
       text: "Nearing yours, Eireen woke up to your efforts.",
@@ -591,7 +602,8 @@ export default function Page5() {
     },
     {
       text: "You get home, drop your bag by the door, and head to the kitchen.",
-      nextIndex: 119
+      nextIndex: 119,
+      background: "/images/Day3/HomeSunset-day3.PNG"
     },
     {
       text: "There’s leftover food in the fridge—still fine. You eat, wash up, then head to your room.",
@@ -599,7 +611,8 @@ export default function Page5() {
     },
     {
       text: "You scroll on your phone for a bit.",
-      nextIndex: 121
+      nextIndex: 121,
+      background: "/images/Day5/BedroomNight-day5.PNG"
     },
     {
       text: "Mostly half-looking at things.",
@@ -652,10 +665,10 @@ export default function Page5() {
     {
       text: "You hope it’ll be fun.",
       nextIndex: 134
-    }
-    
- 
-  
+    },
+    {
+      text: "Day 5: End.................",
+    } 
   ]}
 />
 
