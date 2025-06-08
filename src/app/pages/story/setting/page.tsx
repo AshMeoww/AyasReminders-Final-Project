@@ -4,6 +4,7 @@ import { useVolume } from "@/components/context/VolumeContext";
 import { useRouter } from "next/navigation";
 import { ArrowLeftIcon } from "@heroicons/react/24/solid"; 
 import { LogOut } from 'lucide-react';
+import Image from "next/image";
 
 
 export default function SettingsPage() {

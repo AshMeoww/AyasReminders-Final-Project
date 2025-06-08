@@ -77,7 +77,7 @@ export default function Page2() {
             text: "Will you keep drinking?",
             choices: [
               { text: "Yes", nextIndex: 19, setState: { leftGlass : false }, onClick: () => handleChoice({ id: "keep-drinking", water: 10, carbon: 0, waste: 0}) }, 
-              { text: "Later", nextIndex: 20, setState: { leftGlass : true }, onClick: () => handleChoice({ id: "keep-drinking-later", water: -5, carbon: 0, waste: 0}) },
+              { text: "Later", nextIndex: 20, setState: { leftGlass : true }, onClick: () => handleChoice({ id: "keep-drinking-later", water: 0, carbon: 0, waste: 0}) },
               { text: "No", nextIndex: 21, setState: { leftGlass : false }, onClick: () => handleChoice({ id: "keep-drinking-no", water: -10, carbon: 0, waste: 0}) },
             ],
           },
@@ -92,8 +92,8 @@ export default function Page2() {
           {
             text: "What will you do with the water in the pail?",
             choices: [
-              { text: "Keep it", nextIndex: 25 },
-              { text: "Throw it", nextIndex: 26 },
+              { text: "Keep it", nextIndex: 25, onClick: () => handleChoice({ id: "keep-it", water: 10, carbon: 0, waste: 5}) },
+              { text: "Throw it", nextIndex: 26, onClick: () => handleChoice({ id: "not-keep-it", water: -10, carbon: 0, waste: -5}) },
             ],
           },
           { text: "You fill the pail without throwing the water away.", nextIndex: 27 },
@@ -103,9 +103,9 @@ export default function Page2() {
           {
             text: "How do you manage the running water?",
             choices: [
-              { text: "Let the water run", nextIndex: 29 },
-              { text: "Turn the faucet off", nextIndex: 30 },
-              { text: "Reduce the water flow", nextIndex: 31 },
+              { text: "Let the water run", nextIndex: 29, onClick: () => handleChoice({ id: "keep-drinking-no", water: -10, carbon: 0, waste: -5}) },
+              { text: "Turn the faucet off", nextIndex: 30, onClick: () => handleChoice({ id: "keep-drinking-no", water: 10, carbon: 0, waste: 5}) },
+              { text: "Reduce the water flow", nextIndex: 31, onClick: () => handleChoice({ id: "keep-drinking-no", water: 5, carbon: 0, waste: 0}) },
             ],
           },
           { text: "As you see the overflowing pail, you feel a bit uneasy. Something inside tells you this isn’t right. It feels wasteful, but also easy to ignore.", nextIndex: 32 },
@@ -120,8 +120,8 @@ export default function Page2() {
           {
             text: "Choose what will you do:",
             choices: [
-              { text: "Open the faucet throughout", nextIndex: 38 },
-              { text: "Use a glass", nextIndex: 39 },
+              { text: "Open the faucet throughout", nextIndex: 38 , onClick: () => handleChoice({ id: "faucet-throughout", water: -10, carbon: 0, waste: -5})},
+              { text: "Use a glass", nextIndex: 39, onClick: () => handleChoice({ id: "use-glass", water: 10, carbon: 0, waste: 5}) },
             ],
           },
           {
@@ -149,8 +149,8 @@ export default function Page2() {
             condition: (flags) => flags.leftGlass === true,
             background: "/images/Day2/Water-half.PNG",
             choices: [
-              { text: "Drink it", nextIndex: 44 },
-              { text: "Throw it", nextIndex: 45 }
+              { text: "Drink it", nextIndex: 44, onClick: () => handleChoice({ id: "drink-it", water: 10, carbon: 0, waste: 0}) },
+              { text: "Throw it", nextIndex: 45, onClick: () => handleChoice({ id: "throw-it", water: -10, carbon: 0, waste: 0}) }
             ]
           },
           {
@@ -678,9 +678,9 @@ export default function Page2() {
             name: "Ms. Austline",
             text: "What do you do?",
             choices: [
-              { text: "I slip it into my bag and forget about it.", nextIndex: 136 },
-              { text: "I carry it with me until I find a bin.", nextIndex: 136 },
-              { text: "I throw it near the trash — close enough, right?", nextIndex: 136 }
+              { text: "I slip it into my bag and forget about it.", nextIndex: 136, onClick: () => handleChoice({ id: "slip-in-bag", water: 0, carbon: 0, waste: 8}) },
+              { text: "I carry it with me until I find a bin.", nextIndex: 136, onClick: () => handleChoice({ id: "carry-until-bin", water: 10, carbon: 0, waste: 10}) },
+              { text: "I throw it near the trash — close enough, right?", nextIndex: 136, onClick: () => handleChoice({ id: "throw-near-trash", water: 10, carbon: 0, waste: 0}) }
             ]
           },
           {
