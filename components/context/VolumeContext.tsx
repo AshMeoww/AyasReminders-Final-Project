@@ -54,15 +54,22 @@ export function VolumeProvider({ children }: { children: ReactNode }) {
   // Auto play or pause music based on route and musicSrc changes
   useEffect(() => {
     if (!musicRef.current) return;
-
+  
     const inStory = pathname?.startsWith("/pages/story");
-
-    musicRef.current.src = musicSrc;
-    musicRef.current.load();
+  
+    // Only update src if it has changed
+    if (musicRef.current.src !== window.location.origin + musicSrc) {
+      musicRef.current.src = musicSrc;
+      musicRef.current.load();
+    }
+  
     musicRef.current.volume = masterVolume * musicVolume;
-
+  
     if (inStory) {
-      musicRef.current.play().catch(() => {});
+      // Only play if not already playing
+      if (musicRef.current.paused) {
+        musicRef.current.play().catch(() => {});
+      }
     } else {
       musicRef.current.pause();
       musicRef.current.currentTime = 0;

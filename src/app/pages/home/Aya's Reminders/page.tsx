@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { IoIosArrowDown } from "react-icons/io";
+// import { IoIosArrowDown } from "react-icons/io";
 
 function AyaReminders() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,11 +35,11 @@ function AyaReminders() {
               onClick={toggleDropdown}
               className="mr-4 text-black focus:outline-none transform transition-transform"
             >
-              <IoIosArrowDown
+              {/* <IoIosArrowDown
                 className={`text-2xl transform transition-transform duration-300 ${
                   isOpen ? "rotate-180" : "rotate-0"
                 }`}
-              />
+              /> */}
             </button>
             <button
               onClick={handlePlayGame}
