@@ -22,10 +22,12 @@ export default function GameHome() {
     }, []);
 
   const handleReset = () => {
-    playSfx1();
+    playSfx3(); 
     resetDialogue();
     setShowResetConfirm(false);
-    router.push(`/pages/story/day${day}`);
+    setTimeout(() => {
+      router.push(`/pages/story/day${day}`);
+    }, 1000);
   };
 
   
@@ -157,7 +159,10 @@ export default function GameHome() {
     <h2 className="text-3xl font-normal font-schoolbell mb-11 text-center text-gray-900  mt-[-190px]" >Are you sure you want to exit Berdeston?</h2>
     <div className="flex gap-8">
       <button
-        onClick={() => router.push(`/pages/get-started/Ecocard`)}
+        onClick={() => {
+          router.push(`/pages/get-started/Ecocard`);
+          playSfx1();
+        }}
         className="text-red-600 px-5 py-2 text-2xl font-medium font-schoolbell"
       >
         Yes
