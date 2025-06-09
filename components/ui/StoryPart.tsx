@@ -189,7 +189,7 @@ const handleClick = () => {
   ) => {
     playSfx1();
   
-    onClick?.(); // ✅  the custom logic (saveChoice)
+    onClick?.(); //  the custom logic (saveChoice)
   
     if (ecoPoints) addEcoPoints(ecoPoints);
   
