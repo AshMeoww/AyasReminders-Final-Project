@@ -15,7 +15,7 @@ function Resources() {
 
                 <img src="/images/audio.png" alt="Resource" className="mt-20" />
 
-                <img src="/images/tech_stack.png" alt="Resource" className="mt-20" />
+                <img src="/images/tech_stack(1).png" alt="Resource" className="mt-20" />
             </div>
         </div>
     )

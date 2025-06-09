@@ -82,9 +82,9 @@ export default function Page6() {
     {
         text: "How do you spend the first hour?",
         choices: [
-          { text: "Ride quietly and enjoy the breeze.", nextIndex: 20 },
-          { text: "Chat with Eireen while riding.", nextIndex: 21 },
-          { text: "Try to keep up with Ray and race a little.", nextIndex: 23 },
+          { text: "Ride quietly and enjoy the breeze.", nextIndex: 20, onClick: () => handleChoice({ id: "ride", water: 0, carbon: 0, waste: 0 }) },
+          { text: "Chat with Eireen while riding.", nextIndex: 21, onClick: () => handleChoice({ id: "chat-while-riding", water: 0, carbon: 0, waste: 0 }) },
+          { text: "Try to keep up with Ray and race a little.", nextIndex: 23, onClick: () => handleChoice({ id: "race", water: 0, carbon: 0, waste: 0 }) },
         ],
       },
       
@@ -156,10 +156,10 @@ export default function Page6() {
       {
         text: "Question:\nWhich of the following contributes the least to household water waste?",
         choices: [
-          { text: "A. Leaving the faucet on while brushing", nextIndex: 32 },
-          { text: "B. Taking 15-minute showers", nextIndex: 32 },
-          { text: "C. Fixing a leaky pipe", nextIndex: 34 },
-          { text: "D. Using a hose to clean driveways", nextIndex: 32 },
+          { text: "A. Leaving the faucet on while brushing", nextIndex: 32, onClick: () => handleChoice({ id: "leave-faucet", water: -10, carbon: 0, waste: 0 }) },
+          { text: "B. Taking 15-minute showers", nextIndex: 32, onClick: () => handleChoice({ id: "showers", water: 5, carbon: 0, waste: 0 }) },
+          { text: "C. Fixing a leaky pipe", nextIndex: 34, onClick: () => handleChoice({ id: "fix-pipe", water: 10, carbon: 0, waste: 5 }) },
+          { text: "D. Using a hose to clean driveways", nextIndex: 32, onClick: () => handleChoice({ id: "hose", water: 5, carbon: 0, waste: 0 }) },
         ],
       },
       
@@ -214,9 +214,9 @@ export default function Page6() {
       {
         text: "[What do you do?]",
         choices: [
-          { text: "Suggest cleaning it up together.", nextIndex: 41 },
-          { text: "Quietly pick some up without saying anything.", nextIndex: 42 },
-          { text: "Ignore it—it’s not yours.", nextIndex: 43 },
+          { text: "Suggest cleaning it up together.", nextIndex: 41, onClick: () => handleChoice({ id: "clean-together", water: 0, carbon: 0, waste: 10 }) },
+          { text: "Quietly pick some up without saying anything.", nextIndex: 42, onClick: () => handleChoice({ id: "pick-some", water: 0, carbon: 0, waste: 5 }) },
+          { text: "Ignore it—it’s not yours.", nextIndex: 43, onClick: () => handleChoice({ id: "ignore", water: 0, carbon: 0, waste: -10 }) },
         ]
       },
       

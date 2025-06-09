@@ -87,11 +87,11 @@ export default function Page7() {
         choices: [
           {
             text: "Yes. Let’s ride a bit longer.",
-            nextIndex: 37,
+            nextIndex: 37, onClick: () => handleChoice({ id: "ride-longer", water: 0, carbon: -5, waste: 0 })
           },
           {
             text: "No. Let’s rest here.",
-            nextIndex: 43,
+            nextIndex: 43, onClick: () => handleChoice({ id: "lets-rest", water: 0, carbon: 5, waste: 0 })
           },
         ],
       },
