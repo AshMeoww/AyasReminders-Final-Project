@@ -38,6 +38,7 @@ export default function SettingsPage() {
         </button>
       </div>
 
+<<<<<<< Updated upstream
     <div className="w-full max-w-md space-y-15 text-left ">
       <div className="flex flex-col items-start">
         <label className="block mb-1 font-semibold font-schoolbell " style={{ color: '#2E2E2E' }}>Master Volume</label>
@@ -64,6 +65,45 @@ export default function SettingsPage() {
           className="w-50 ml-10"
         />
       </div>
+=======
+      <div className="absolute top-25 right-0 z-0">
+        <Image
+          src="/images/aya-settings.png"
+          alt="Aya Character"
+          draggable="false"
+          width={1000}
+          height={300}
+          className="object-cover z-0"
+        />
+      </div>
+
+      <div className="w-full max-w-md space-y-15 text-left z-10">
+        <div className="flex flex-col items-start">
+          <label className="block mb-1 font-semibold font-schoolbell" style={{ color: '#2E2E2E' }}>Master Volume</label>
+          <input
+            type="range"
+            min={0}
+            max={1}
+            step={0.01}
+            value={masterVolume}
+            onChange={(e) => setMasterVolume(parseFloat(e.target.value))}
+            className="w-50 ml-10"
+          />
+        </div>
+
+        <div className="flex flex-col items-start">
+          <label className="block mb-1 font-semibold font-schoolbell" style={{ color: '#2E2E2E' }}>Music Volume</label>
+          <input
+            type="range"
+            min={0}
+            max={1}
+            step={0.01}
+            value={musicVolume}
+            onChange={(e) => setMusicVolume(parseFloat(e.target.value))}
+            className="w-50 ml-10"
+          />
+        </div>
+>>>>>>> Stashed changes
 
       <div className="flex flex-col items-start">
         <label className="block mb-1 font-semibold font-schoolbell" style={{ color: '#2E2E2E' }}>SFX Volume</label>
